@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://caetano-veyssieres.com/xmlrpc.php">
+
+<title>WIP Realistic skull model &#8211; Caetano Veyssières</title>
+<script type="text/javascript">
+  WebFontConfig = {"google":{"families":["Alegreya:r:latin,latin-ext"]}};
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://s1.wp.com/wp-content/plugins/custom-fonts/js/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+	})();
+</script><style id="jetpack-custom-fonts-css">.wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active h5, .wf-active h6{font-family:"Alegreya",serif;font-style:normal;font-weight:400}.wf-active h1{font-weight:400;font-style:normal}.wf-active h2{font-weight:400;font-style:normal}.wf-active h3{font-weight:400;font-style:normal}.wf-active h4{font-weight:400;font-style:normal}.wf-active h5{font-weight:400;font-style:normal}.wf-active h6{font-weight:400;font-style:normal}.wf-active .site-title{font-style:normal;font-weight:400}.wf-active .entry-title, .wf-active .portfolio-entry-title{font-style:normal;font-weight:400}.wf-active .page-title{font-style:normal;font-weight:400}.wf-active .page-template-portfolio-page-php .portfolio-entry-title, .wf-active .page-template-portfolio-page-php .entry-title, .wf-active .project-navigation-wrapper .portfolio-entry-title, .wf-active .project-navigation-wrapper .entry-title, .wf-active .page-template-portfolio-template-php .portfolio-entry-title, .wf-active .page-template-portfolio-template-php .entry-title, .wf-active body[class*="jetpack-portfolio"].archive .portfolio-entry-title, .wf-active body[class*="jetpack-portfolio"].archive .entry-title{font-style:normal;font-weight:400}.wf-active .format-link .entry-title a:after{font-style:normal;font-weight:400}.wf-active .comment-reply-title, .wf-active .comments-title{font-style:normal;font-weight:400}.wf-active .widget-title{font-weight:400;font-style:normal}.wf-active .flexslider .entry-title{font-style:normal;font-weight:400}</style>
+<meta name="google-site-verification" content="pO8sjZGEm2_2f-eTQfClIyrYGVXSuwZBDnCy5_rLF70" />
+<link rel='dns-prefetch' href='//s2.wp.com' />
+<link rel='dns-prefetch' href='//caetanoveyssieres.wordpress.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//s1.wp.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Caetano Veyssières &raquo; Feed" href="https://caetano-veyssieres.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Caetano Veyssières &raquo; Comments Feed" href="https://caetano-veyssieres.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Caetano Veyssières &raquo; WIP Realistic skull&nbsp;model Comments Feed" href="https://caetano-veyssieres.com/portfolio/wip-realistic-skull-model/feed/" />
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+			<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s1.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1488818651h&ver=4.7.4"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='all-css-0-1' href='https://s0.wp.com/_static/??-eJyFUdFOwzAM/CGyqIA28YD4liQ1xGucRHGysr/HbaEIhsJL5bvc+U6unrNyKVaIVVNTObQ3jKzn7BIpJgxw/YUOjvlO/23jZtkVzBWToNcUQpp7ep8uUJRt1gYQd70G2OUYXWij0ELo0bBHWcAHwngrObOu8j7Z9L4PvdyA0+KCmo2b1Ip6cjNKqrKmfF5ix5sJdUx1bbcPvW0uFRCesqmLgmBEAwFIZD0b5eOXaxm9NO/GbFWtzQWYlXwJG6nqJeiferRU2a6yHv8Hc2PdNurcrOYJqvPf//GFnofHp/vhdHo4DucPplrokQ==' type='text/css' media='all' />
+<style id='wpcom-admin-bar-inline-css' type='text/css'>
+.goog-te-banner-frame { top:32px !important }
+</style>
+<link rel='stylesheet' id='sketch-lato-css'  href='https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C300italic%2C400italic%2C700italic&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='all-css-2-1' href='https://s1.wp.com/_static/??-eJx9jt0OwiAMRl/I2kwXfy6MzwKsQxQogc7Ft5fdmOni7r6TfqctjgkMR6EoGAZIfrAuFrQUKbs6+BO3ppQNzly5UaCCadBYHiTmhi4aLPLyBGMyHBbG7Fpkqa7qgougVYbnbq1ticGzUeI4fgH0Xrm8pmbSnm2NFmtrhmuScIFMibNAzzn88kKddn7kkXOnuvq0Z6381L2GS9OejvtD057b+xt/Y4/F' type='text/css' media='all' />
+<link rel='stylesheet' id='print-css-3-1' href='https://s0.wp.com/wp-content/mu-plugins/global-print/global-print.css?m=1465851035h' type='text/css' media='print' />
+<link rel='stylesheet' id='all-css-4-1' href='https://s1.wp.com/_static/??-eJx1jEEKhDAMAD9kDWJZ9SC+pdaglSaVJur3Vy+7B/E2DMPAuRmfWJEVaDdb3OfAAm6iwGZ0GciJYr7IpANzDhPK35VepICXhdeQ+F786JHrgnT9FgtzTKOLdzBQX9mubuynapv1CxieOrs=' type='text/css' media='all' />
+<script type='text/javascript' src='https://s1.wp.com/_static/??-eJx9kFEKwjAMQC9kVycT9yOeZavZyGyb2qQbenr7MRFHFQIh5JHkRS9BoTc2XYH1lOOeID7WVE280/8A5XCMnUDl0L9hQ17Ai3ZJBZtG9Kw59WwiBkHK1UDW0rLF8+hALA6YuxEKXUc9WlCJIWbAS75qoAL3bYB+Rigt24iChM7cVATGJ5S8OXwUfz9spS7uXDft6dDWx2Y/vQBJS4U5'></script>
+<link rel='stylesheet' id='all-css-0-2' href='https://s1.wp.com/wp-content/mu-plugins/highlander-comments/style.css?m=1377793621h' type='text/css' media='all' />
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s1.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563h&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://caetanoveyssieres.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Some random sketches' href='https://caetano-veyssieres.com/portfolio/some-random-sketches/' />
+<meta name="generator" content="WordPress.com" />
+<link rel="canonical" href="https://caetano-veyssieres.com/portfolio/wip-realistic-skull-model/" />
+<link rel='shortlink' href='http://wp.me/p7skb2-64' />
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=json&amp;url=https%3A%2F%2Fcaetano-veyssieres.com%2Fportfolio%2Fwip-realistic-skull-model%2F&amp;for=wpcom-auto-discovery" /><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=xml&amp;url=https%3A%2F%2Fcaetano-veyssieres.com%2Fportfolio%2Fwip-realistic-skull-model%2F&amp;for=wpcom-auto-discovery" />
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="WIP Realistic skull model" />
+<meta property="og:url" content="https://caetano-veyssieres.com/portfolio/wip-realistic-skull-model/" />
+<meta property="og:description" content="&nbsp; Download the FBX Download the blend" />
+<meta property="article:published_time" content="2016-09-27T16:19:20+00:00" />
+<meta property="article:modified_time" content="2017-05-12T19:57:44+00:00" />
+<meta property="og:site_name" content="Caetano Veyssières" />
+<meta property="og:image" content="https://caetanoveyssieres.files.wordpress.com/2016/09/preview.png" />
+<meta property="og:image:width" content="761" />
+<meta property="og:image:height" content="1080" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:site" content="@wordpressdotcom" />
+<meta name="twitter:image:src" content="https://caetanoveyssieres.files.wordpress.com/2016/09/preview.png?w=640" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom" />
+<link rel="shortcut icon" type="image/x-icon" href="https://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48" />
+<link rel="icon" type="image/x-icon" href="https://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48" />
+<link rel="apple-touch-icon-precomposed" href="https://s0.wp.com/i/webclip.png" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://caetano-veyssieres.com/osd.xml" title="Caetano Veyssières" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com" />
+<meta name="theme-color" content="#444444" />
+		<style type="text/css">
+			.recentcomments a {
+				display: inline !important;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
+
+			table.recentcommentsavatartop img.avatar, table.recentcommentsavatarend img.avatar {
+				border: 0px;
+				margin: 0;
+			}
+
+			table.recentcommentsavatartop a, table.recentcommentsavatarend a {
+				border: 0px !important;
+				background-color: transparent !important;
+			}
+
+			td.recentcommentsavatarend, td.recentcommentsavatartop {
+				padding: 0px 0px 1px 0px;
+				margin: 0px;
+			}
+
+			td.recentcommentstextend {
+				border: none !important;
+				padding: 0px 0px 2px 10px;
+			}
+
+			.rtl td.recentcommentstextend {
+				padding: 0px 10px 2px 0px;
+			}
+
+			td.recentcommentstexttop {
+				border: none;
+				padding: 0px 0px 0px 10px;
+			}
+
+			.rtl td.recentcommentstexttop {
+				padding: 0px 10px 0px 0px;
+			}
+		</style>
+		<meta name="application-name" content="Caetano Veyssières" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="CG generalist" /><meta name="msapplication-task" content="name=Edit post;action-uri=https://wordpress.com/edit/jetpack-portfolio/caetano-veyssieres.com/376;icon-uri=https://s2.wp.com/i/icons/post.ico" /><meta name="msapplication-task" content="name=Write a post;action-uri=https://wordpress.com/post/caetano-veyssieres.com;icon-uri=https://s2.wp.com/i/icons/post.ico" /><meta name="msapplication-task" content="name=Moderate comments;action-uri=https://caetanoveyssieres.wordpress.com/wp-admin/edit-comments.php?comment_status=moderated;icon-uri=https://s0.wp.com/i/icons/comment.ico" /><meta name="msapplication-task" content="name=Upload new media;action-uri=https://caetanoveyssieres.wordpress.com/wp-admin/media-new.php;icon-uri=https://s2.wp.com/i/icons/media.ico" /><meta name="msapplication-task" content="name=Blog stats;action-uri=https://caetanoveyssieres.wordpress.com/wp-admin/index.php?page=stats;icon-uri=https://s1.wp.com/i/icons/stats.ico" /><meta name="title" content="WIP Realistic skull&nbsp;model | Caetano Veyssières on WordPress.com" />
+<meta name="description" content="&nbsp; Download the FBX Download the blend" />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #444444; }
+</style>
+<style type="text/css" media="print">#wpadminbar { display:none; }</style>
+<style type="text/css" media="screen">
+	html { margin-top: 32px !important; }
+	* html body { margin-top: 32px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { margin-top: 46px !important; }
+		* html body { margin-top: 46px !important; }
+	}
+</style>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+<style type="text/css" id="custom-colors-css">.site-title a,.entry-title a,.portfolio-entry-title a{color:#333}.site-title a:visited,.entry-title a:visited,.portfolio-entry-title a:visited{color:#333}.entry-footer a,.entry-meta a,.portfolio-entry-meta a,.main-navigation a{color:#939393}.entry-footer a:visited,.entry-meta a:visited,.portfolio-entry-meta a:visited,.main-navigation a:visited{color:#939393}body{background-color:#444}button:hover,button:focus,button:active,input[type="button"]:hover,input[type="button"]:focus,input[type="button"]:active,input[type="reset"]:hover,input[type="reset"]:focus,input[type="reset"]:active,input[type="submit"]:hover,input[type="submit"]:focus,input[type="submit"]:active{border-color:#005f6b}.toggled .menu-toggle{border-color:#005f6b}.toggled .menu-toggle{color:#005f6b}button:hover,button:focus,button:active,input[type="button"]:hover,input[type="button"]:focus,input[type="button"]:active,input[type="reset"]:hover,input[type="reset"]:focus,input[type="reset"]:active,input[type="submit"]:hover,input[type="submit"]:focus,input[type="submit"]:active{color:#005f6b}.current_page_item a,.current-menu-item a{color:#005f6b}#infinite-handle span,.widget a,a,a:visited{color:#005f6b}.entry-title a:hover,.portfolio-entry-title a:hover{color:#005f6b}.site-footer a:hover{color:#005f6b}.page-template-portfolio-page-php .jetpack-portfolio:hover a,.project-navigation-wrapper .jetpack-portfolio:hover a,page-template-portfolio-template-php .jetpack-portfolio:hover a,body[class*="jetpack-portfolio"].archive .jetpack-portfolio:hover a{color:#005f6b}a:hover,a:focus,a:active{color:#005f6b}.entry-footer a:hover,.entry-meta a:hover,.portfolio-entry-meta a:hover{color:#005f6b}.main-navigation li:hover>a{color:#005f6b}</style>
+</head>
+
+<body class="jetpack-portfolio-template-default single single-jetpack-portfolio postid-376 single-format-standard logged-in admin-bar no-customize-support custom-background mp6 customizer-styles-applied no-sidebar highlander-enabled highlander-light">
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
+						<h1 class="site-title"><a href="https://caetano-veyssieres.com/" rel="home">Caetano Veyssières</a></h1>
+			<h2 class="site-description">CG generalist</h2>
+		</div>
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle">Menu</button>
+			<div class="menu-menu-container"><ul id="menu-menu" class="menu"><li id="menu-item-252" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-252"><a>Development</a>
+<ul class="sub-menu">
+	<li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-454"><a>Blender</a>
+	<ul class="sub-menu">
+		<li id="menu-item-156" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-156"><a href="https://caetano-veyssieres.com/camera-cropper-splitter/">Camera Cropper &amp; Splitter</a></li>
+	</ul>
+</li>
+	<li id="menu-item-242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-242"><a href="https://caetano-veyssieres.com/illustrator/">Illustrator</a></li>
+	<li id="menu-item-246" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-246"><a href="https://caetano-veyssieres.com/maya/">Maya</a></li>
+</ul>
+</li>
+<li id="menu-item-540" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-540"><a>About me</a>
+<ul class="sub-menu">
+	<li id="menu-item-223" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-223"><a href="https://caetano-veyssieres.com/contact/">Contact/Links</a></li>
+	<li id="menu-item-524" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-524"><a href="https://caetano-veyssieres.com/workstation/">My Tools and Specs</a></li>
+	<li id="menu-item-290" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-290"><a href="https://caetanoveyssieres.files.wordpress.com/2016/06/caetano-veyssieres-resume.pdf">Curriculum Vitae</a>
+	<ul class="sub-menu">
+		<li id="menu-item-312" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-312"><a href="https://caetanoveyssieres.files.wordpress.com/2016/06/cv-caetano-veyssieres3.pdf">French</a></li>
+		<li id="menu-item-313" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-313"><a href="https://caetanoveyssieres.files.wordpress.com/2016/06/caetano-veyssieres-resume2.pdf">English</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-139" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-139"><a>PORTFOLIO</a>
+<ul class="sub-menu">
+	<li id="menu-item-198" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-198"><a href="https://caetanoveyssieres.wordpress.com/project-type/cgi/">CGI</a></li>
+	<li id="menu-item-200" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-200"><a href="https://caetanoveyssieres.wordpress.com/project-type/handdrawing/">Hand drawing</a></li>
+	<li id="menu-item-221" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-221"><a href="https://caetanoveyssieres.wordpress.com/project-type/print/">Print</a></li>
+	<li id="menu-item-507" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-507"><a href="https://caetano-veyssieres.com/">Reel (home page)</a></li>
+</ul>
+</li>
+<li id="menu-item-625" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-625"><a>Tutorials</a>
+<ul class="sub-menu">
+	<li id="menu-item-623" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-623"><a href="https://caetano-veyssieres.com/blender-tutorial-1/">Blender &#8211; Flat voxel animation</a></li>
+	<li id="menu-item-624" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-624"><a href="https://caetano-veyssieres.com/cellular-automata-image-sequence-tutorial/">Cellular automaton image sequence</a></li>
+</ul>
+</li>
+</ul></div>		</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+		
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+<article id="post-376" class="post-376 jetpack-portfolio type-jetpack-portfolio status-publish format-standard has-post-thumbnail hentry jetpack-portfolio-type-cgi">
+
+	<header class="entry-header">
+		<h1 class="entry-title">WIP Realistic skull&nbsp;model</h1>		<div class="entry-meta">
+			<span class="portfolio-type-links"><a href="https://caetano-veyssieres.com/project-type/cgi/" rel="tag">CGI</a></span>			<span class="sep"> | </span><span class="edit-link"><a class="post-edit-link" href="https://wordpress.com/edit/jetpack-portfolio/caetano-veyssieres.com/376">Edit</a></span>		</div>
+	</header>
+
+	<div class="entry-content">
+		<div class="tiled-gallery type-rectangular tiled-gallery-unresized" data-original-width="1091" data-carousel-extra='{&quot;blog_id&quot;:110185100,&quot;permalink&quot;:&quot;https:\/\/caetano-veyssieres.com\/portfolio\/wip-realistic-skull-model\/&quot;,&quot;likes_blog_id&quot;:110185100}' > <div class="gallery-row" style="width: 1091px; height: 962px;" data-original-width="1091" data-original-height="962" > <div class="gallery-group images-1" style="width: 679px; height: 962px;" data-original-width="679" data-original-height="962" > <div class="tiled-gallery-item tiled-gallery-item-large" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"> <a href="https://caetanoveyssieres.files.wordpress.com/2016/09/preview.png" border="0" itemprop="url"> <meta itemprop="width" content="675"> <meta itemprop="height" content="958"> <img data-attachment-id="663" data-orig-file="https://caetanoveyssieres.files.wordpress.com/2016/09/preview.png" data-orig-size="761,1080" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Preview" data-image-description="" data-medium-file="https://caetanoveyssieres.files.wordpress.com/2016/09/preview.png?w=211" data-large-file="https://caetanoveyssieres.files.wordpress.com/2016/09/preview.png?w=722" src="https://i2.wp.com/caetanoveyssieres.files.wordpress.com/2016/09/preview.png?w=675&#038;h=958&#038;crop&#038;ssl=1" width="675" height="958" data-original-width="675" data-original-height="958" itemprop="http://schema.org/image" title="Preview" alt="Preview" style="width: 675px; height: 958px;" /> </a> </div> </div> <!-- close group --> <div class="gallery-group images-3" style="width: 412px; height: 962px;" data-original-width="412" data-original-height="962" > <div class="tiled-gallery-item tiled-gallery-item-large" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"> <a href="https://caetanoveyssieres.files.wordpress.com/2016/09/06.jpeg" border="0" itemprop="url"> <meta itemprop="width" content="408"> <meta itemprop="height" content="317"> <img data-attachment-id="372" data-orig-file="https://caetanoveyssieres.files.wordpress.com/2016/09/06.jpeg" data-orig-size="989,768" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="06" data-image-description="" data-medium-file="https://caetanoveyssieres.files.wordpress.com/2016/09/06.jpeg?w=300" data-large-file="https://caetanoveyssieres.files.wordpress.com/2016/09/06.jpeg?w=989" src="https://i2.wp.com/caetanoveyssieres.files.wordpress.com/2016/09/06.jpeg?w=408&#038;h=317&#038;crop&#038;ssl=1" width="408" height="317" data-original-width="408" data-original-height="317" itemprop="http://schema.org/image" title="06" alt="06" style="width: 408px; height: 317px;" /> </a> </div> <div class="tiled-gallery-item tiled-gallery-item-large" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"> <a href="https://caetanoveyssieres.files.wordpress.com/2016/09/04.jpeg" border="0" itemprop="url"> <meta itemprop="width" content="408"> <meta itemprop="height" content="317"> <img data-attachment-id="367" data-orig-file="https://caetanoveyssieres.files.wordpress.com/2016/09/04.jpeg" data-orig-size="989,768" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="04" data-image-description="" data-medium-file="https://caetanoveyssieres.files.wordpress.com/2016/09/04.jpeg?w=300" data-large-file="https://caetanoveyssieres.files.wordpress.com/2016/09/04.jpeg?w=989" src="https://i1.wp.com/caetanoveyssieres.files.wordpress.com/2016/09/04.jpeg?w=408&#038;h=317&#038;crop&#038;ssl=1" width="408" height="317" data-original-width="408" data-original-height="317" itemprop="http://schema.org/image" title="04" alt="04" style="width: 408px; height: 317px;" /> </a> </div> <div class="tiled-gallery-item tiled-gallery-item-large" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"> <a href="https://caetanoveyssieres.files.wordpress.com/2016/09/03.jpeg" border="0" itemprop="url"> <meta itemprop="width" content="408"> <meta itemprop="height" content="316"> <img data-attachment-id="365" data-orig-file="https://caetanoveyssieres.files.wordpress.com/2016/09/03.jpeg" data-orig-size="989,768" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="03" data-image-description="" data-medium-file="https://caetanoveyssieres.files.wordpress.com/2016/09/03.jpeg?w=300" data-large-file="https://caetanoveyssieres.files.wordpress.com/2016/09/03.jpeg?w=989" src="https://i1.wp.com/caetanoveyssieres.files.wordpress.com/2016/09/03.jpeg?w=408&#038;h=316&#038;crop&#038;ssl=1" width="408" height="316" data-original-width="408" data-original-height="316" itemprop="http://schema.org/image" title="03" alt="03" style="width: 408px; height: 316px;" /> </a> </div> </div> <!-- close group --> </div> <!-- close row --> <div class="gallery-row" style="width: 1091px; height: 424px;" data-original-width="1091" data-original-height="424" > <div class="gallery-group images-1" style="width: 546px; height: 424px;" data-original-width="546" data-original-height="424" > <div class="tiled-gallery-item tiled-gallery-item-large" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"> <a href="https://caetanoveyssieres.files.wordpress.com/2016/09/01.jpeg" border="0" itemprop="url"> <meta itemprop="width" content="542"> <meta itemprop="height" content="420"> <img data-attachment-id="370" data-orig-file="https://caetanoveyssieres.files.wordpress.com/2016/09/01.jpeg" data-orig-size="989,768" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="01" data-image-description="" data-medium-file="https://caetanoveyssieres.files.wordpress.com/2016/09/01.jpeg?w=300" data-large-file="https://caetanoveyssieres.files.wordpress.com/2016/09/01.jpeg?w=989" src="https://i0.wp.com/caetanoveyssieres.files.wordpress.com/2016/09/01.jpeg?w=542&#038;h=420&#038;crop&#038;ssl=1" width="542" height="420" data-original-width="542" data-original-height="420" itemprop="http://schema.org/image" title="01" alt="01" style="width: 542px; height: 420px;" /> </a> </div> </div> <!-- close group --> <div class="gallery-group images-1" style="width: 545px; height: 424px;" data-original-width="545" data-original-height="424" > <div class="tiled-gallery-item tiled-gallery-item-large" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"> <a href="https://caetanoveyssieres.files.wordpress.com/2016/09/02.jpeg" border="0" itemprop="url"> <meta itemprop="width" content="541"> <meta itemprop="height" content="420"> <img data-attachment-id="371" data-orig-file="https://caetanoveyssieres.files.wordpress.com/2016/09/02.jpeg" data-orig-size="989,768" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="02" data-image-description="" data-medium-file="https://caetanoveyssieres.files.wordpress.com/2016/09/02.jpeg?w=300" data-large-file="https://caetanoveyssieres.files.wordpress.com/2016/09/02.jpeg?w=989" src="https://i1.wp.com/caetanoveyssieres.files.wordpress.com/2016/09/02.jpeg?w=541&#038;h=420&#038;crop&#038;ssl=1" width="541" height="420" data-original-width="541" data-original-height="420" itemprop="http://schema.org/image" title="02" alt="02" style="width: 541px; height: 420px;" /> </a> </div> </div> <!-- close group --> </div> <!-- close row --> </div>
+<p>&nbsp;</p>
+<table>
+<tbody>
+<tr>
+<td>
+<p style="text-align:center;"><a href="https://www.dropbox.com/s/2dzmtveztcal4kk/Skull-fbx.zip?dl=0"><img data-attachment-id="669" data-permalink="https://caetano-veyssieres.com/download-fbx/" data-orig-file="https://caetanoveyssieres.files.wordpress.com/2017/05/download-fbx.png?w=1091" data-orig-size="48,48" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Download-fbx" data-image-description="" data-medium-file="https://caetanoveyssieres.files.wordpress.com/2017/05/download-fbx.png?w=1091?w=48" data-large-file="https://caetanoveyssieres.files.wordpress.com/2017/05/download-fbx.png?w=1091?w=48" class="aligncenter wp-image-669 size-full" src="https://caetanoveyssieres.files.wordpress.com/2017/05/download-fbx.png?w=1091" alt=""   /></a>Download the FBX</p>
+</td>
+<td>
+<p style="text-align:center;"><a href="https://www.dropbox.com/s/qzajuqsneft9nhx/Skull%208.blend?dl=0"><img data-attachment-id="668" data-permalink="https://caetano-veyssieres.com/download-blend-2/" data-orig-file="https://caetanoveyssieres.files.wordpress.com/2017/05/download-blend1.png?w=1091" data-orig-size="48,48" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Download-blend" data-image-description="" data-medium-file="https://caetanoveyssieres.files.wordpress.com/2017/05/download-blend1.png?w=1091?w=48" data-large-file="https://caetanoveyssieres.files.wordpress.com/2017/05/download-blend1.png?w=1091?w=48" class="aligncenter wp-image-668 size-full" src="https://caetanoveyssieres.files.wordpress.com/2017/05/download-blend1.png?w=1091" alt=""   /></a>Download the blend</p>
+</td>
+</tr>
+</tbody>
+</table>
+		<div id="wordads-preview-parent" class="wpcnt">
+			<div class="wpa">
+				<span class="wpa-about">Advertisements</span>
+				<div class="u">
+					<div class="wpa-notice">
+						<p>Occasionally, some of your visitors may see an advertisement here<br/>You can hide these ads completely by upgrading to one of our paid plans.</p>
+						<p class="wpa-buttons">
+							<a class="wpa-button is-primary" id="wordads-preview-more" href="https://wordpress.com/plans/110185100/?feature=no-adverts&utm_campaign=removeadsnotive" rel="nofollow" target="_blank">Upgrade now</a>
+							<a class="wpa-button" id="wordads-preview-dismiss" href="#">Dismiss message</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		
+				<span class="comments-link"><a href="https://caetano-veyssieres.com/portfolio/wip-realistic-skull-model/#respond">Leave a comment</a></span>
+		
+	</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+			
+<div id="comments" class="comments-area">
+
+	
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/portfolio/wip-realistic-skull-model/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://caetano-veyssieres.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="2186cf5b2e" /><input type="hidden" name="_wp_http_referer" value="/portfolio/wip-realistic-skull-model/" />
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="wordpress" />
+
+<div class="comment-form-field comment-textarea">
+	<label for="comment">Enter your comment here...</label>
+	<div id="comment-form-comment"><textarea id="comment" name="comment" title="Enter your comment here..."></textarea></div>
+</div>
+
+<div id="comment-form-identity">
+
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li style="display:none;">
+				<a href="#comment-form-guest" id="postas-guest" title="Guest">
+					<span></span>
+				</a>
+			</li>
+			<li class="selected">
+				<a href="#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook">
+					<span></span>
+				</a>
+			</li>
+			<li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=identicon&amp;forcedefault=y&amp;r=G" alt="Gravatar" width="25" class="no-grav" />
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value="" /></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value="" /></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="url" value="" /></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="https://1.gravatar.com/avatar/115d8c0d02c7e1dfdf3a3c80b6c9ad76?s=25&amp;d=https%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D25%26amp%3Bd%3Didenticon%26amp%3Bforcedefault%3Dy%26amp%3Br%3DG&amp;r=G" alt="Gravatar" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="https://1.gravatar.com/avatar/115d8c0d02c7e1dfdf3a3c80b6c9ad76?s=25&#038;d=https%3A%2F%2Fs2.wp.com%2Fwp-content%2Fmu-plugins%2Fhighlander-comments%2Fimages%2Fwplogo.png&#038;r=G" />
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="62673503" />
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="0848f0dbc356af70696c6e6abedd103bfcef69c9" />
+				<p class="comment-form-posting-as pa-wordpress"><strong>Caetano:</strong> You are commenting using your WordPress.com account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'wordpress' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=identicon&amp;forcedefault=y&amp;r=G" alt="Twitter picture" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="" />
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="" />
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="" />
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'twitter' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=identicon&amp;forcedefault=y&amp;r=G" alt="Facebook photo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="" />
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="" />
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="" />
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'facebook' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=identicon&amp;forcedefault=y&amp;r=G" alt="Google+ photo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="" />
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="" />
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="" />
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> You are commenting using your Google+ account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'googleplus' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;"/> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p></div>
+
+<p class="form-submit"><input name="submit" type="submit" id="comment-submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='376' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="d0cfa78e42" /></p>
+<input type="hidden" name="genseq" value="1494622199" />
+<p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="62"/></p>			</form>
+			</div><!-- #respond -->
+	<div style="clear: both"></div>
+</div><!-- #comments -->
+
+		
+			<nav class="navigation project-navigation" role="navigation">
+		<h1 class="more-projects">More Projects</h1>
+		<div class="project-navigation-wrapper">
+			<ul>
+									<li class="previous">
+							
+<article id="post-338" class="post-338 jetpack-portfolio type-jetpack-portfolio status-publish format-standard has-post-thumbnail hentry jetpack-portfolio-type-handdrawing">
+	<div class="entry-thumbnail sketch-square">
+		<a href="https://caetano-veyssieres.com/portfolio/some-random-sketches/">
+			<span class="screen-reader-text">Some random sketches</span>
+							<img width="800" height="800" src="https://caetanoveyssieres.files.wordpress.com/2016/06/voiture.jpg?w=800&amp;h=800&amp;crop=1" class="attachment-sketch-square size-sketch-square wp-post-image" alt="" srcset="https://caetanoveyssieres.files.wordpress.com/2016/06/voiture.jpg?w=800&amp;h=800&amp;crop=1 800w, https://caetanoveyssieres.files.wordpress.com/2016/06/voiture.jpg?w=1600&amp;h=1600&amp;crop=1 1600w, https://caetanoveyssieres.files.wordpress.com/2016/06/voiture.jpg?w=150&amp;h=150&amp;crop=1 150w, https://caetanoveyssieres.files.wordpress.com/2016/06/voiture.jpg?w=300&amp;h=300&amp;crop=1 300w, https://caetanoveyssieres.files.wordpress.com/2016/06/voiture.jpg?w=768&amp;h=768&amp;crop=1 768w, https://caetanoveyssieres.files.wordpress.com/2016/06/voiture.jpg?w=1024&amp;h=1024&amp;crop=1 1024w" sizes="(max-width: 800px) 100vw, 800px" data-attachment-id="342" data-permalink="https://caetano-veyssieres.com/portfolio/some-random-sketches/voiture/" data-orig-file="https://caetanoveyssieres.files.wordpress.com/2016/06/voiture.jpg" data-orig-size="2084,1877" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="Voiture" data-image-description="" data-medium-file="https://caetanoveyssieres.files.wordpress.com/2016/06/voiture.jpg?w=300" data-large-file="https://caetanoveyssieres.files.wordpress.com/2016/06/voiture.jpg?w=1024" />					</a>
+		<span class="edit-link"><a class="post-edit-link" href="https://wordpress.com/edit/jetpack-portfolio/caetano-veyssieres.com/338">Edit</a></span>	</div>
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="https://caetano-veyssieres.com/portfolio/some-random-sketches/" rel="bookmark">Some random sketches</a></h1>	</header><!-- .entry-header -->
+</article><!-- #post-## -->						</li>
+									<li class="current">
+							
+<article id="post-376" class="post-376 jetpack-portfolio type-jetpack-portfolio status-publish format-standard has-post-thumbnail hentry jetpack-portfolio-type-cgi">
+	<div class="entry-thumbnail sketch-square">
+		<a href="https://caetano-veyssieres.com/portfolio/wip-realistic-skull-model/">
+			<span class="screen-reader-text">WIP Realistic skull&nbsp;model</span>
+							<img width="761" height="800" src="https://caetanoveyssieres.files.wordpress.com/2016/09/preview.png?w=761&amp;h=800&amp;crop=1" class="attachment-sketch-square size-sketch-square wp-post-image" alt="" srcset="https://caetanoveyssieres.files.wordpress.com/2016/09/preview.png?w=761&amp;h=800&amp;crop=1 761w, https://caetanoveyssieres.files.wordpress.com/2016/09/preview.png?w=143&amp;h=150&amp;crop=1 143w, https://caetanoveyssieres.files.wordpress.com/2016/09/preview.png?w=285&amp;h=300&amp;crop=1 285w" sizes="(max-width: 761px) 100vw, 761px" data-attachment-id="663" data-permalink="https://caetano-veyssieres.com/portfolio/wip-realistic-skull-model/preview/" data-orig-file="https://caetanoveyssieres.files.wordpress.com/2016/09/preview.png" data-orig-size="761,1080" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Preview" data-image-description="" data-medium-file="https://caetanoveyssieres.files.wordpress.com/2016/09/preview.png?w=211" data-large-file="https://caetanoveyssieres.files.wordpress.com/2016/09/preview.png?w=722" />					</a>
+		<span class="edit-link"><a class="post-edit-link" href="https://wordpress.com/edit/jetpack-portfolio/caetano-veyssieres.com/376">Edit</a></span>	</div>
+	<header class="entry-header">
+		<h1 class="entry-title"><a href="https://caetano-veyssieres.com/portfolio/wip-realistic-skull-model/" rel="bookmark">WIP Realistic skull&nbsp;model</a></h1>	</header><!-- .entry-header -->
+</article><!-- #post-## -->						</li>
+									<li class="next">
+							<div class="no-result jetpack-portfolio">
+								<div class="post-thumbnail-wrapper"></div>
+							</div>
+						</li>
+						</ul>
+		</div>
+	</nav>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<a href="https://wordpress.com/?ref=footer_blog">Blog at WordPress.com.</a>
+			
+					</div><!-- .site-info -->
+					<div class="social-links"><ul id="menu-social-links" class="menu"><li id="menu-item-486" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-486"><a target="_blank" href="https://vimeo.com/chameleonscales"><span class="screen-reader-text">Vimeo</span></a></li>
+<li id="menu-item-485" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-485"><a href="mailto:caetanovey@gmail.com"><span class="screen-reader-text">Email</span></a></li>
+<li id="menu-item-484" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-484"><a target="_blank" href="https://github.com/ChameleonScales"><span class="screen-reader-text">GitHub</span></a></li>
+<li id="menu-item-483" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-483"><a target="_blank" href="https://www.youtube.com/user/gamnamno"><span class="screen-reader-text">Youtube</span></a></li>
+<li id="menu-item-482" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-482"><a target="_blank" href="https://www.linkedin.com/in/caetano-veyssieres/"><span class="screen-reader-text">LinkedIn</span></a></li>
+<li id="menu-item-481" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-481"><a target="_blank" href="https://twitter.com/ChameleonScales"><span class="screen-reader-text">Twitter</span></a></li>
+</ul></div>			</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<!--  -->
+	<script type="text/javascript">
+	/* <![CDATA[ */
+		jQuery(document).ready( function($) {
+			function doFollowingHover() {
+				$('#wp-admin-bar-follow > a').unbind( '.unfollow' );
+
+				$('#wp-admin-bar-follow > a').bind( 'mouseover.unfollow', function() {
+
+					$(this).html( "Unfollow" ).parent( 'li' ).addClass( 'unfollow' );
+				});
+				$('#wp-admin-bar-follow > a').bind( 'mouseout.unfollow', function() {
+					$(this).html( "Following" ).parent( 'li' ).removeClass( 'unfollow' );
+				});
+			}
+							doFollowingHover();
+			
+			$('#wp-admin-bar-follow > a').click( function( e ) {
+				$('#wp-admin-bar-follow > a').unbind( '.unfollow' );
+
+				e.preventDefault();
+
+				var link = $( this ), li = $( '#wp-admin-bar-follow' ), timeout = 0;
+
+				if ( li.hasClass( 'subscribed' ) ) {
+					li.removeClass( 'subscribed' ).removeClass( 'unfollow' );
+					link.html( "Follow" );
+
+					$('body').append( $( 'div.wpcom-bubble' ).removeClass( 'fadein' ) ).off( 'click.bubble' );
+
+					var action = 'ab_unsubscribe_from_blog';
+				} else {
+					li.addClass( 'subscribed' ).removeClass( 'unfollow' );
+					link.html( "Following" );
+
+						var left = 131 - link.width();
+						li.append( $( 'div.wpcom-bubble' ).css( { left: '-' + left + 'px' } ) );
+						$( 'div.bubble-txt', 'div.wpcom-bubble' ).html( "New posts from this blog will now appear in <a target=\"_blank\" href=\"http:\/\/wordpress.com\/\">your reader<\/a>. You can manage email alerts from your <a target=\"_blank\" href=\"http:\/\/wordpress.com\/following\/edit\/\">subscriptions page<\/a>." );
+
+						$( 'div.wpcom-bubble.action-bubble' ).addClass( 'fadein' );
+
+						setTimeout( function() {
+							$('body').on( 'click.bubble touchstart.bubble', function(e) {
+								if ( !$(e.target).hasClass('wpcom-bubble') && !$(e.target).parents( 'div.wpcom-bubble' ).length )
+									hideBubble();
+							});
+							setTimeout( hideBubble, 15000 );
+						}, 500 );
+
+					var action = 'ab_subscribe_to_blog';
+					$('#wp-admin-bar-follow > a').bind( 'mouseout.shift', function() {
+						doFollowingHover();
+						$(this).unbind( '.shift' );
+					});
+				}
+
+				var nonce = link.attr( 'href' ).split( '_wpnonce=' );
+				nonce = nonce[1];
+
+				$.post( "https:\/\/caetano-veyssieres.com\/wp-admin\/admin-ajax.php", {
+					'action': action,
+					'_wpnonce': nonce,
+					'source': 'admin_bar',
+					'blog_id': 110185100				});
+			});
+		});
+	/* ]]> */
+	</script>
+<script type='text/javascript' src='//0.gravatar.com/js/gprofiles.js?ver=201719y'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":"115d8c0d02c7e1dfdf3a3c80b6c9ad76"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s1.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1380573781h'></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	</div>
+<div id="report-form-window" style="display:none;"></div><script type='text/javascript'>
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\/\/caetanoveyssieres.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/caetanoveyssieres.wordpress.com\/wp-login.php?action=logout&_wpnonce=3ba65aa8ef","homeURL":"https:\/\/caetano-veyssieres.com\/","postID":"376","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"0","userIsLoggedIn":"1","isJetpack":"0","text_direction":"ltr"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s2.wp.com/_static/??/wp-content/js/jquery/jquery.autoresize.js,/wp-content/mu-plugins/highlander-comments/script.js?m=1479964158j'></script>
+
+	<div id="carousel-reblog-box">
+		<form action="#" name="carousel-reblog">
+			<textarea id="carousel-reblog-content" name="carousel-reblog-content" placeholder="Add your thoughts here... (optional)"></textarea>
+			<label for="carousel-reblog-to-blog-id" id="carousel-reblog-lblogid">Post to</label>
+			<select name="carousel-reblog-to-blog-id" id="carousel-reblog-to-blog-id">
+							<option value="110185100">Caetano Veyssières</option>
+						</select>
+
+			<div class="submit">
+				<span class="canceltext"><a href="#" class="cancel">Cancel</a></span>
+				<input type="submit" name="carousel-reblog-submit" class="button" id="carousel-reblog-submit" value="Reblog Post" />
+				<input type="hidden" id="carousel-reblog-blog-id" value="110185100" />
+				<input type="hidden" id="carousel-reblog-blog-url" value="https://caetano-veyssieres.com" />
+				<input type="hidden" id="carousel-reblog-blog-title" value="Caetano Veyssières" />
+				<input type="hidden" id="carousel-reblog-post-url" value="" />
+				<input type="hidden" id="carousel-reblog-post-title" value="" />
+			</div>
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="72f786d2e6" /><input type="hidden" name="_wp_http_referer" value="/portfolio/wip-realistic-skull-model/" />		</form>
+
+		<div class="arrow"></div>
+	</div>
+<script type='text/javascript' src='https://s1.wp.com/wp-content/mu-plugins/akismet-3.0/_inc/form.js?m=1404442431h'></script>
+<link rel='stylesheet' id='all-css-0-3' href='https://s1.wp.com/wp-content/mu-plugins/carousel/jetpack-carousel.css?m=1481571546h' type='text/css' media='all' />
+<!--[if lte IE 8]>
+<link rel='stylesheet' id='jetpack-carousel-ie8fix-css'  href='https://s1.wp.com/wp-content/mu-plugins/carousel/jetpack-carousel-ie8fix.css?m=1412618825h&#038;ver=20121024' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='all-css-2-3' href='https://s1.wp.com/wp-content/mu-plugins/tiled-gallery/tiled-gallery.css?m=1443731146h' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var thickboxL10n = {"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"https:\/\/s1.wp.com\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var comment_like_text = {"loading":"Loading..."};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpNotesArgs = {"cacheBuster":"20160329","iframeUrl":"https:\/\/widgets.wp.com\/notificationsbeta\/","iframeAppend":"2","iframeScroll":"no","wide":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcom_tos_report_form = {"ajaxurl":"\/wp-admin\/admin-ajax.php","isLoggedoutUser":"","post_ID":"376","current_url":"https:\/\/caetano-veyssieres.com\/portfolio\/wip-realistic-skull-model","report_this_content":"Report this content"};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wordads_preview = {"ajaxurl":"https:\/\/caetano-veyssieres.com\/wp-admin\/admin-ajax.php","blog_id":"110185100","user":"gamnamno","nonce":"9da857bd85"};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var actionbardata = {"siteID":"110185100","siteName":"Caetano Veyssi\u00e8res","siteURL":"https:\/\/caetano-veyssieres.com","icon":"<img alt='' src='https:\/\/s1.wp.com\/i\/logo\/wpcom-gray-white.png' class='avatar avatar-50' height='50' width='50' \/>","canManageOptions":"1","canCustomizeSite":"1","isFollowing":"1","themeSlug":"pub\/sketch","signupURL":"https:\/\/wordpress.com\/start\/","loginURL":"https:\/\/caetanoveyssieres.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Fcaetano-veyssieres.com%2Fportfolio%2Fwip-realistic-skull-model%2F","themeURL":"https:\/\/wordpress.com\/theme\/sketch\/","xhrURL":"https:\/\/caetano-veyssieres.com\/wp-admin\/admin-ajax.php","nonce":"4fa5f5ecf2","isSingular":"1","isFolded":"","isLoggedIn":"1","isMobile":"","subscribeNonce":"<input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"877ab7ac24\" \/>","referer":"https:\/\/caetano-veyssieres.com\/portfolio\/wip-realistic-skull-model\/","canFollow":"1","statusMessage":"","customizeLink":"https:\/\/caetanoveyssieres.wordpress.com\/wp-admin\/customize.php?url=https%3A%2F%2Fcaetanoveyssieres.wordpress.com%2Fportfolio%2Fwip-realistic-skull-model%2F","postID":"376","shortlink":"http:\/\/wp.me\/p7skb2-64","canEditPost":"1","editLink":"https:\/\/wordpress.com\/edit\/jetpack-portfolio\/caetano-veyssieres.com\/376","statsLink":"https:\/\/wordpress.com\/stats\/post\/376\/caetano-veyssieres.com","i18n":{"view":"View site","follow":"Follow","following":"Following","edit":"Edit","login":"Log in","signup":"Sign up","customize":"Customize","report":"Report this content","themeInfo":"Get theme: Sketch","shortlink":"Copy shortlink","copied":"Copied","followedText":"New posts from this site will now appear in your <a href=\"https:\/\/wordpress.com\/\">Reader<\/a>","foldBar":"Collapse this bar","unfoldBar":"Expand this bar","editSubs":"Manage subscriptions","viewReader":"View site in the Reader","subscribe":"Sign me up","enterEmail":"Enter your email address","followers":"Join 46 other followers","alreadyUser":"Already have a WordPress.com account? <a href=\"https:\/\/caetanoveyssieres.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Fcaetano-veyssieres.com%2Fportfolio%2Fwip-realistic-skull-model%2F\">Log in now.<\/a>","stats":"Stats"}};
+/* ]]> */
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"1","lang":"en","ajaxurl":"https:\/\/caetano-veyssieres.com\/wp-admin\/admin-ajax.php","nonce":"e89cfe22f0","display_exif":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/caetanoveyssieres.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Fcaetano-veyssieres.com%2Fportfolio%2Fwip-realistic-skull-model%2F","blog_id":"110185100","local_comments_commenting_as":"<p id=\"jp-carousel-commenting-as\">Commenting as Caetano<\/p>","reblog":"Reblog","reblogged":"Reblogged","reblog_add_thoughts":"Add your thoughts here... (optional)","reblogging":"Reblogging...","post_reblog":"Post Reblog","stats_query_args":"blog=110185100&v=wpcom&tz=0&user=1&user_id=62673503&subd=caetanoveyssieres","is_public":"1","reblog_enabled":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s0.wp.com/_static/??-eJyVU9FWwyAM/SFZdZue44PHb6GQtbRAkEC7/b3hzNZtdlVfCiT33pPcpNUYhEKfwKeqo0rDYBSE46ajh4pTxiubNVDJpdaovsbjfJlAE99lEWxujKfKmp5JHxkytNJrC3FJUWpnvKhl3PC5ojbjOK/QiW/efQ7jHIfEuZKulFRXNJoA/yFdBW6JqQXHsJBZuIek2sLwcjCNTAZ/NLQIp94EVve9OKDKJA5m0fupjgjBni7dugRlryGSwgj3ELUsg/Ow5DenXaYkVbvmkMcEX19RikIvhu2v+Hlg6+CEVDrEmNiN6G7ft8zaYjNzR4xaai7KSqJzt1MoRN5qGP+0YE5SglgqxQFiNMW4ObamoMrIi8J8W9szGTET2KqDFHgmYgqsmWMsaNFIyz/T6frFrHf39rR/3T7vXh532+4TTq5vXw=='></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>		<script>
+			var _comscore = _comscore || [];
+			_comscore.push({
+				c1: "2",
+				c2: "7518284"
+			});
+			(function() {
+				var s = document.createElement("script"),
+					el = document.getElementsByTagName("script")[0];
+				s.defer = true;
+				s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+				el.parentNode.insertBefore(s, el);
+			})();
+		</script>
+		<noscript>
+			<p class="robots-nocontent"><img src="https://sb.scorecardresearch.com/p?c1=2&c2=7518284&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1" alt="" style="display:none;" width="1" height="1" /></p>
+		</noscript><script src="//stats.wp.com/w.js?56" type="text/javascript" async defer></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['identifyUser', 62673503, 'gamnamno']);
+_tkq.push(['storeContext', {'blog_id':'110185100','blog_tz':'0','user_lang':'en','blog_lang':'en'}]);
+_stq.push(['view', {'blog':'110185100','v':'wpcom','tz':'0','user':'1','user_id':'62673503','post':'376','subd':'caetanoveyssieres'}]);
+_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1zNDZ8S252Wis9XUQyb3YrcUVIU2R0VH5TcUpqcF9NWi1bMDJfLy90VXNvY2U3ZFZ1RWlDfmk5Mml4bj01JWVOTTdfMT1PZmxRWDkxPThjWEJLYVRHTjMzNH43cEdXNGcsLjM3MHolVHNofFRkbUkwcVozViZURC1CVWp1Zl1PR2tFdFlSTV0vWDFBektrQS9xb1N1Nz9UX2lRWmt8XXZRUDJrMTEuQTR5b190eVZvclZVUFp6clNLbi15SU9KTV1XSH4zYjlLXz9PdTV3WGJlOGIreDZ+Unx3bUVZaUQ2Sm5xZl0xc112ZTg1W2VabGFEZU53dXpqTjlxPVs5LVA='}]);
+	</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+		<div id="wpadminbar" class="nojq nojs ltr">
+							<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Skip to toolbar</a>
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar" tabindex="0">
+						<ul id="wp-admin-bar-root-default" class="ab-top-menu">
+			
+		<li id="wp-admin-bar-blog" class="menupop my-sites"><a class="ab-item"  aria-haspopup="true" href="https://wordpress.com/stats/caetano-veyssieres.com">My Site</a>			<div class="ab-sub-wrapper">		<ul id="wp-admin-bar-blog-default" class="ab-submenu">
+			
+		<li id="wp-admin-bar-new-site"><a class="ab-item"  href="https://wordpress.com/start?ref=admin-bar-logged-in">+ Add New WordPress</a>		</li>
+		<li id="wp-admin-bar-blog-info" class="current-site"><a class="ab-item"  href="https://caetano-veyssieres.com/"><div class="ab-site-icon"></div><span class="ab-site-title">Caetano Veyssières</span><span class="ab-site-description">caetano-veyssieres.com</span></a>		</li>
+		<li id="wp-admin-bar-blog-stats" class="mb-icon"><a class="ab-item"  href="https://wordpress.com/stats/caetano-veyssieres.com">Stats <img style="width: 95px; margin: 0; float: right;" src="https://caetanoveyssieres.wordpress.com/wp-includes/charts/admin-bar-hours-scale-2x.php?masterbar=1" alt="Stats" title="Showing site views per hour for the last 48 hours. Click for full Site Stats." /></a>		</li>
+		<li id="wp-admin-bar-plan" class="inline-action">		<div class="ab-item ab-empty-item" ><a href="https://wordpress.com/plans/caetano-veyssieres.com" class="ab-item ab-primary mb-icon" id="wp-admin-bar-plan">Plan</a><a href="https://wordpress.com/plans/caetano-veyssieres.com" class="ab-secondary" id="wp-admin-bar-plan-badge">Free</a></div>		</li>		</ul>
+			<ul id="wp-admin-bar-publish" class="ab-submenu">
+			
+		<li id="wp-admin-bar-publish-header" class="ab-submenu-header">		<div class="ab-item ab-empty-item" >Publish</div>		</li>
+		<li id="wp-admin-bar-new-post" class="inline-action">		<div class="ab-item ab-empty-item" ><a href="https://wordpress.com/posts/caetano-veyssieres.com" class="ab-item ab-primary mb-icon" id="wp-admin-bar-edit-post">Blog Posts</a><a href="https://wordpress.com/post/caetano-veyssieres.com" class="ab-secondary" id="wp-admin-bar-new-post">Add</a></div>		</li>
+		<li id="wp-admin-bar-new-page" class="inline-action">		<div class="ab-item ab-empty-item" ><a href="https://wordpress.com/pages/caetano-veyssieres.com" class="ab-item ab-primary mb-icon" id="wp-admin-bar-edit-page">Pages</a><a href="https://wordpress.com/page/caetano-veyssieres.com" class="ab-secondary" id="wp-admin-bar-new-page">Add</a></div>		</li>
+		<li id="wp-admin-bar-new-attachment" class="inline-action">		<div class="ab-item ab-empty-item" ><a href="https://wordpress.com/media/caetano-veyssieres.com" class="ab-item ab-primary mb-icon" id="wp-admin-bar-edit-attachment">Media</a><a href="https://wordpress.com/media/caetano-veyssieres.com" class="ab-secondary" id="wp-admin-bar-new-attachment">Add</a></div>		</li>
+		<li id="wp-admin-bar-new-jetpack-portfolio" class="inline-action">		<div class="ab-item ab-empty-item" ><a href="https://wordpress.com/types/jetpack-portfolio/caetano-veyssieres.com" class="ab-item ab-primary mb-icon" id="wp-admin-bar-edit-jetpack-portfolio">Portfolio</a><a href="https://wordpress.com/edit/jetpack-portfolio/caetano-veyssieres.com" class="ab-secondary" id="wp-admin-bar-new-jetpack-portfolio">Add</a></div>		</li>		</ul>
+			<ul id="wp-admin-bar-look-and-feel" class="ab-submenu">
+			
+		<li id="wp-admin-bar-look-and-feel-header" class="ab-submenu-header">		<div class="ab-item ab-empty-item" >Personalize</div>		</li>
+		<li id="wp-admin-bar-themes" class="inline-action">		<div class="ab-item ab-empty-item" ><a href="https://wordpress.com/design/caetano-veyssieres.com" class="ab-item ab-primary mb-icon" id="wp-admin-bar-themes">Themes</a><a href="https://caetanoveyssieres.wordpress.com/wp-admin/customize.php?url=https%3A%2F%2Fcaetanoveyssieres.wordpress.com%2Fportfolio%2Fwip-realistic-skull-model%2F" class="ab-secondary" id="wp-admin-bar-cmz">Customize</a></div>		</li>		</ul>
+			<ul id="wp-admin-bar-configuration" class="ab-submenu">
+			
+		<li id="wp-admin-bar-configuration-header" class="ab-submenu-header">		<div class="ab-item ab-empty-item" >Configure</div>		</li>
+		<li id="wp-admin-bar-sharing" class="mb-icon"><a class="ab-item"  href="https://wordpress.com/sharing/caetano-veyssieres.com">Sharing</a>		</li>
+		<li id="wp-admin-bar-users-toolbar" class="inline-action">		<div class="ab-item ab-empty-item" ><a href="https://wordpress.com/people/team/caetano-veyssieres.com" class="ab-item ab-primary mb-icon" id="wp-admin-bar-people">People</a><a href="https://wordpress.com/people/new/caetano-veyssieres.com" class="ab-secondary" id="wp-admin-bar-people-add">Add</a></div>		</li>
+		<li id="wp-admin-bar-plugins" class="mb-icon"><a class="ab-item"  href="https://wordpress.com/plugins/caetano-veyssieres.com">Plugins</a>		</li>
+		<li id="wp-admin-bar-domains" class="inline-action">		<div class="ab-item ab-empty-item" ><a href="https://wordpress.com/domains/caetano-veyssieres.com" class="ab-item ab-primary mb-icon" id="wp-admin-bar-domains">Domains</a><a href="https://wordpress.com/domains/add/caetano-veyssieres.com" class="ab-secondary" id="wp-admin-bar-domains-add">Add</a></div>		</li>
+		<li id="wp-admin-bar-blog-settings" class="mb-icon"><a class="ab-item"  href="https://wordpress.com/settings/general/caetano-veyssieres.com">Settings</a>		</li>
+		<li id="wp-admin-bar-legacy-dashboard" class="mb-icon"><a class="ab-item"  href="https://caetanoveyssieres.wordpress.com/wp-admin/">WP Admin</a>		</li>		</ul>
+	</div>		</li>
+		<li id="wp-admin-bar-jumptotop-button-menu"><a class="ab-item"  href="#"><div id="jumptotop"><span class="noticon noticon-top"></span></div></a>		</li>
+		<li id="wp-admin-bar-newdash" class="menupop"><a class="ab-item"  aria-haspopup="true" href="https://wordpress.com/">Reader</a>			<div class="ab-sub-wrapper">		<ul id="wp-admin-bar-newdash-default" class="ab-submenu">
+			
+		<li id="wp-admin-bar-streams-header" class="ab-submenu-header">		<div class="ab-item ab-empty-item" >Streams</div>		</li>
+		<li id="wp-admin-bar-following" class="inline-action">		<div class="ab-item ab-empty-item" ><a href="https://wordpress.com/" class="ab-item ab-primary mb-icon" id="wp-admin-bar-followed-sites">Followed Sites</a><a href="https://wordpress.com/following/edit" class="ab-secondary" id="wp-admin-bar-reader-followed-sites-manage">Manage</a></div>		</li>
+		<li id="wp-admin-bar-discover-discover" class="mb-icon-spacer"><a class="ab-item"  href="https://wordpress.com/discover">Discover</a>		</li>
+		<li id="wp-admin-bar-discover-search" class="mb-icon-spacer"><a class="ab-item"  href="https://wordpress.com/read/search">Search</a>		</li>
+		<li id="wp-admin-bar-discover-recommended-blogs" class="mb-icon-spacer"><a class="ab-item"  href="https://wordpress.com/recommendations">Recommendations</a>		</li>
+		<li id="wp-admin-bar-my-activity-my-likes" class="mb-icon-spacer"><a class="ab-item"  href="https://wordpress.com/activities/likes">My Likes</a>		</li>		</ul>
+	</div>		</li>		</ul>
+			<ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
+			
+		<li id="wp-admin-bar-notes" class="menupop">		<div class="ab-item ab-empty-item" ><span id="wpnt-notes-unread-count" class="wpnt-loading wpn-read"></span><span class="noticon noticon-bell"></span><span class="ab-text">Notifications</span></div><div id="wpnt-notes-panel2" style="display:none" lang="en" dir="ltr"><div class="wpnt-notes-panel-header"><span class="wpnt-notes-header"></span><span class="wpnt-notes-panel-link"></span></div></div>		</li>
+		<li id="wp-admin-bar-my-account" class="menupop with-avatar"><a class="ab-item"  aria-haspopup="true" href="https://wordpress.com/me/"><img alt='' src='https://1.gravatar.com/avatar/115d8c0d02c7e1dfdf3a3c80b6c9ad76?s=32&#038;d=mm&#038;r=G' class='avatar avatar-32' height='32' width='32' /><span class="ab-text">Me</span></a>			<div class="ab-sub-wrapper">		<ul id="wp-admin-bar-user-actions" class="ab-submenu">
+			
+		<li id="wp-admin-bar-user-info" class="user-info user-info-item">		<div class="ab-item ab-empty-item" tabindex="-1"><img alt='' src='https://1.gravatar.com/avatar/115d8c0d02c7e1dfdf3a3c80b6c9ad76?s=128&#038;d=mm&#038;r=G' class='avatar avatar-128' height='128' width='128' /><span class="display-name">Caetano</span><a class="username" href="http://gravatar.com/gamnamno">@gamnamno</a><form action="https://caetanoveyssieres.wordpress.com/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2Fcaetano-veyssieres.com%2F&amp;_wpnonce=3ba65aa8ef" method="post"><button class="ab-sign-out" type="submit">Sign Out</button></form></div>		</li>
+		<li id="wp-admin-bar-profile-header" class="ab-submenu-header">		<div class="ab-item ab-empty-item" >Profile</div>		</li>
+		<li id="wp-admin-bar-my-profile" class="mb-icon"><a class="ab-item"  href="https://wordpress.com/me">My Profile</a>		</li>
+		<li id="wp-admin-bar-account-settings" class="mb-icon"><a class="ab-item"  href="https://wordpress.com/me/account">Account Settings</a>		</li>
+		<li id="wp-admin-bar-billing" class="mb-icon"><a class="ab-item"  href="https://wordpress.com/me/purchases">Manage Purchases</a>		</li>
+		<li id="wp-admin-bar-security" class="mb-icon"><a class="ab-item"  href="https://wordpress.com/me/security">Security</a>		</li>
+		<li id="wp-admin-bar-notifications" class="mb-icon"><a class="ab-item"  href="https://wordpress.com/me/notifications">Notifications</a>		</li>
+		<li id="wp-admin-bar-special-header" class="ab-submenu-header">		<div class="ab-item ab-empty-item" >Special</div>		</li>
+		<li id="wp-admin-bar-get-apps" class="mb-icon"><a class="ab-item"  href="https://wordpress.com/me/get-apps">Get Apps</a>		</li>
+		<li id="wp-admin-bar-next-steps" class="mb-icon"><a class="ab-item"  href="https://wordpress.com/me/next">Next Steps</a>		</li>
+		<li id="wp-admin-bar-help" class="mb-icon"><a class="ab-item"  href="https://wordpress.com/help">Help</a>		</li>		</ul>
+	</div>		</li>
+		<li id="wp-admin-bar-ab-new-post"><a class="ab-item"  href="https://wordpress.com/post/caetano-veyssieres.com"><span>Write</span></a>		</li>		</ul>
+				</div>
+							<a class="screen-reader-shortcut" href="https://caetanoveyssieres.wordpress.com/wp-login.php?action=logout&#038;_wpnonce=3ba65aa8ef">Log Out</a>
+					</div>
+
+	
+<script type="text/javascript">
+/* <![CDATA[ */
+var clickDebugLink;
+
+jQuery(document).ready( function($) {
+	var single = true, w = 1000,
+		supe = false;
+
+	$(document.body).load(function(){ $('#wpadminbar img.grav-hashed').removeClass('grav-hashed'); }); // hack to hide the gravatar hovercard
+
+	if ( single && supe )
+		w = 1385;
+	else if ( supe )
+		w = 1200;
+
+	// debug bar extra
+	clickDebugLink = function( parent_id, obj ) {
+
+		$('#'+parent_id).children('div').hide();
+
+		document.getElementById( obj.href.substr( obj.href.indexOf( '#' ) + 1 ) ).style.display = 'block';
+		$( obj.href.substr( obj.href.indexOf( '#' ) ) ).show()
+
+		$(obj).parent().addClass('current').siblings('li').removeClass('current');
+
+		return false;
+	};
+
+	$( '#wpadminbar #wp-admin-bar-shortlink' ).click( function() {
+		$( '#adminbar-shortlink-input' ).select();
+	});
+
+	// skip tap-to-hover on site switcher for mobile
+	if ( 'ontouchstart' in window ) {
+		$('#wp-admin-bar-switch-site').on( 'touchstart', function( event ) {
+			if ( $( window ).width() > 782 ) {
+				return;
+			}
+			event.stopPropagation();
+			$( event.target ).first( 'a' ).click();
+		});
+	}
+
+});
+/* ]]> */
+</script>
+	<div class="wpcom-bubble action-bubble">
+		<div class="bubble-txt"></div>
+	</div>
+	<script type="text/javascript">function hideBubble() { jQuery('body').append( jQuery( 'div.wpcom-bubble' ).removeClass( 'fadein' ) ).off( 'click.bubble touchstart.bubble' ); jQuery(document).off( 'scroll.bubble' ); };</script>
+		<script type="text/javascript">
+	jQuery( '#wp-admin-bar-jumptotop-button-menu a' ).click( function( e ) {
+		e.preventDefault();
+		jQuery( 'html, body' ).animate( { scrollTop: 0 }, 'fast' );
+	} );
+	function hideShowTbJumpToTop() {
+		var total_width = 0;
+		// Calculate total width taken by items minus our button to see if it'll
+		// overlap with other toolbar menus.
+		jQuery( '#wp-admin-bar-root-default > li' ).each( function() {
+			var self = jQuery( this );
+			if ( 'wp-admin-bar-jumptotop-button-menu' != self.attr( 'id' ) )
+				total_width += self.width();
+		});
+		if ( jQuery( '#wp-admin-bar-jumptotop-button-menu' ).position()['left'] - total_width < 10 ) {
+			jQuery( '#jumptotop' ).animate( { 'top': '-50px' }, 'fast' );
+		} else if (  jQuery( window ).scrollTop() >= 350 && parseInt( jQuery( '#jumptotop' ).css( 'top' ) ) < 0 ) {
+			if ( jQuery( '#wp-admin-bar-jumptotop-button-menu' ).position()['left'] - total_width < 10 )
+			   return;
+			jQuery( '#jumptotop' ).animate( { 'top': 0 }, 'fast' );
+		} else if (  jQuery( window ).scrollTop() < 1 && parseInt( jQuery( '#jumptotop' ).css( 'top' ) ) >= 0 ) {
+			jQuery( '#jumptotop' ).animate( { 'top': '-50px' }, 'fast' );
+		}
+	}
+	// handle on page load if auto scrolling to a position
+	hideShowTbJumpToTop();
+	// bind to scrolll event
+	var jumpToTopTimer = null;
+	jQuery( window ).scroll( function() {
+		clearTimeout( jumpToTopTimer );
+		jumpToTopTimer = setTimeout( jumpToTopRefresh, 150 );
+	} );
+	var jumpToTopRefresh = function() {
+		hideShowTbJumpToTop();
+	};
+	</script>
+	<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+</body>
+</html>
