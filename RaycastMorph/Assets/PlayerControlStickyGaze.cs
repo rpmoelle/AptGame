@@ -22,7 +22,10 @@ public class PlayerControlStickyGaze : MonoBehaviour {
     public Text taskDisplay;
     GameObject greenCube;
     public GameObject TEMPNEWOBJ;
+
     List<GameObject> MyObjects = new List<GameObject>();
+    myInfo objectInfo; //info on the object from MyObjects[0]
+
     public Text WorldLabel;
     public bool inSallysRoom;
     public Text task;
@@ -66,8 +69,8 @@ public class PlayerControlStickyGaze : MonoBehaviour {
         }
         MyObjects.Clear();
         cam.transform.DetachChildren();
-        //MyObjects.Add(GameObject.Find("Main Camera/Player"));
     }
+
     public void nextTask() {
         //sets up next task
         taskNum++;
@@ -114,6 +117,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
         }
         return "";
     }
+
     void turnOffAllLabels() {
         //Text[] labels = WorldLabels.GetComponentsInChildren<Text>();
         //turn off all labels
@@ -128,12 +132,13 @@ public class PlayerControlStickyGaze : MonoBehaviour {
         //compare tags and return if the game objects grabbed match those tags.
         bool got1 = false;
         bool got2 = false;
-        //check if one object is from each side
-        Debug.Log("ITS ME" + MyObjects.Count);
-        foreach (GameObject g in MyObjects) {
 
-            Debug.Log("ITS ME" + g.name);
-            Debug.Log("ITS ME " + g.tag);//problem: i think its going through every childNOPE
+        //check if one object is from each side
+        //Debug.Log("ITS ME" + MyObjects.Count);
+
+        foreach (GameObject g in MyObjects) {
+            //Debug.Log("ITS ME" + g.name);
+            //Debug.Log("ITS ME " + g.tag); //problem: i think its going through every childNOPE
             if (!got1 || !got2) {
                 if (g.tag == key1) {
                     got1 = true;
@@ -154,9 +159,9 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                 }
             }
         }
+
         if (got1 && got2) {
             return true;
-
         }
         else {
             return false;
@@ -170,14 +175,10 @@ public class PlayerControlStickyGaze : MonoBehaviour {
         foreach (Rigidbody i in items) {
             i.useGravity = true;
             if (i.gameObject.GetComponent<myInfo>() != null) {
-
                 i.gameObject.GetComponent<myInfo>().grabbed = false;
                 i.gameObject.GetComponent<Rigidbody>().isKinematic = false;
                 i.gameObject.GetComponent<Rigidbody>().useGravity = true;
-
             }
-            //Vector3 force = 7f * Time.deltaTime * transform.forward;
-            //i.AddForce(force);
         }
     }
 
@@ -213,23 +214,13 @@ public class PlayerControlStickyGaze : MonoBehaviour {
 
         player.transform.localEulerAngles = new Vector3(player.transform.localEulerAngles.x, player.transform.localEulerAngles.y + Input.GetAxis("Mouse X") * 2f, player.transform.localEulerAngles.z);
         player.transform.localEulerAngles = new Vector3(player.transform.localEulerAngles.x + Input.GetAxis("Mouse Y") * -2f, player.transform.localEulerAngles.y, player.transform.localEulerAngles.z);
-
-        // transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
-        /* if (Input.GetAxis("Mouse X") < 0)
-         {
-             player.transform.localEulerAngles = player.transform.Rotate(Vector3.up);
-         }
-
-         if (Input.GetAxis("Mouse X") > 0)
-         {
-             player.transform.Rotate(Vector3.up) * -speed;
-         }*/
     }
 
     void CastRay() {
         Ray ray = cam.GetComponent<Camera>().ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-        Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red);//show the debug ray
+        Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red);  //show the debug ray
         RaycastHit hit;
+
         if (Physics.Raycast(ray, out hit, 3f)) {    //the 10f is the length the ray extends in distance 
             //A collision occured between the ray and a thing
             if (hit.collider != null && hit.collider != floor && hit.collider.gameObject != cam && Input.GetKeyDown(KeyCode.LeftShift)) {
@@ -239,7 +230,6 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                 MyObjects.Add(hit.collider.gameObject);
                 if (hit.collider.GetComponent<myInfo>() != null) {
                     hit.collider.GetComponent<myInfo>().grabbed = true;
-
                 }
                 //hit.collider.transform.GetComponent<Rigidbody>().velocity = cam.transform.GetComponent<Rigidbody>().velocity;
             }
@@ -252,18 +242,18 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         //this is a combined object, break it it
                     }
                 }
-
                 if (hit.collider.gameObject.GetComponent<myInfo>() != null) {
                     hit.collider.gameObject.GetComponent<myInfo>().watched = true;
                     if (hit.collider.gameObject.GetComponent<myInfo>().label != null) {
                         //Debug.Log("WOOO");
-                        //WorldLabel.enabled = true;
-                        if (hit.collider.gameObject.GetComponent<myInfo>().wrongCombine) {
-                            WorldLabel.enabled = true;
-                        }
-                        else {
-                            WorldLabel.enabled = false;
-                        }
+
+                        WorldLabel.enabled = true;
+                        //if (hit.collider.gameObject.GetComponent<myInfo>().wrongCombine) {
+                        //    WorldLabel.enabled = true;
+                        //}
+                        //else {
+                        //    WorldLabel.enabled = false;
+                        //}
                         WorldLabel.text = hit.collider.gameObject.GetComponent<myInfo>().label;
                     }
                 }
@@ -285,10 +275,6 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                     t.GetComponent<Rigidbody>().gameObject.GetComponent<myInfo>().grabbed = false;
                     t.GetComponent<Rigidbody>().AddRelativeForce(cam.transform.forward * 300f);
                     t.GetComponent<Rigidbody>().useGravity = true;
-                    /*  t.GetComponent<Rigidbody>().gameObject.GetComponent<myInfo>().grabbed = false;
-                      t.GetComponent<Rigidbody>().isKinematic = false;
-                      t.GetComponent<Rigidbody>().useGravity = true;
-                      t.GetComponent<Rigidbody>().AddExplosionForce(500f, t.position, 10f, 3.0F);*/
                 }
             }
         }
@@ -306,8 +292,11 @@ public class PlayerControlStickyGaze : MonoBehaviour {
     }
 
     void Combine() {
+        //this is to combine objects with tags
         if (Input.GetKeyDown(KeyCode.Q)) {
-            //this is to combine objects with tags
+
+            objectInfo = MyObjects[0].GetComponent<myInfo>();    //the label of the object we're referring to a lot here on out
+
             switch (taskNum) {
                 case 1: {
                         //find clean and dirty
@@ -318,7 +307,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;//standardize this to be a uniform location infront of camera
                             GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
-                                                                                                                                        //MyObjects[0].GetComponent<myInfo>().label = "Puppy That Knows 17 Digits of Pi";
+
                             temp.name = "Clean and dirty item.";
                             temp.GetComponent<myInfo>().sallyObject = true;
                             detachItems();
@@ -332,7 +321,8 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         }
                         else {
                             Debug.Log("COMBO DIDN'T WORK");
-                            MyObjects[0].GetComponent<myInfo>().wrongCombine = true;
+                            objectInfo.wrongCombine = true;
+                            objectInfo.label += " (" + objectInfo.tag + ")";
                             this.gameObject.GetComponent<AudioSource>().Play();
                         }
 
@@ -347,7 +337,8 @@ public class PlayerControlStickyGaze : MonoBehaviour {
 
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;
-                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
+                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);    //move this to infront of camera
+
                             temp.GetComponent<myInfo>().label = "Popcorn";
                             temp.name = "Popcorn";
                             temp.GetComponent<myInfo>().sallyObject = false;
@@ -362,7 +353,8 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         }
                         else {
                             Debug.Log("COMBO DIDN'T WORK");
-                            MyObjects[0].GetComponent<myInfo>().wrongCombine = true;
+                            objectInfo.wrongCombine = true;
+                            objectInfo.label += " (" + objectInfo.tag + ")";
                             this.gameObject.GetComponent<AudioSource>().Play();
                         }
 
@@ -391,7 +383,8 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         }
                         else {
                             Debug.Log("COMBO DIDN'T WORK");
-                            MyObjects[0].GetComponent<myInfo>().wrongCombine = true;
+                            objectInfo.wrongCombine = true;
+                            objectInfo.label += " (" + objectInfo.tag + ")";
                             this.gameObject.GetComponent<AudioSource>().Play();
                         }
 
