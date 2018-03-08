@@ -20,6 +20,7 @@ TagManager:
   - funny
   - comedic
   - dirty
+  - reset
   layers:
   - Default
   - TransparentFX

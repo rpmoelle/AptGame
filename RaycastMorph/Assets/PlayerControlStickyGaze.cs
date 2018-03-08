@@ -29,6 +29,8 @@ public class PlayerControlStickyGaze : MonoBehaviour
     public Text task;
     public string currentRequestor;
 
+    List<myInfo> AllObjsWithInfo = new List<myInfo>();
+
     //Public Tasks
     int taskNum = 1;
 
@@ -36,6 +38,11 @@ public class PlayerControlStickyGaze : MonoBehaviour
     void Start()
     {
         currentRequestor = "Sally";
+
+        for (int i = 0; i < FindObjectsOfType<myInfo>().Length; i++) {
+            AllObjsWithInfo.Add(FindObjectsOfType<myInfo>()[i]);
+        }
+        Debug.Log(AllObjsWithInfo[0].gameObject.name);
     }
 
     // Update is called once per frame
@@ -118,8 +125,14 @@ public class PlayerControlStickyGaze : MonoBehaviour
                     hit.collider.gameObject.GetComponent<myInfo>().watched = true;
                     if (hit.collider.gameObject.GetComponent<myInfo>().label != null)
                     {
-                        Debug.Log("WOOO");
-                        WorldLabel.enabled = true;
+                        //Debug.Log("WOOO");
+                        //WorldLabel.enabled = true;
+                        if (hit.collider.gameObject.GetComponent<myInfo>().wrongCombine) {
+                            WorldLabel.enabled = true;
+                        }
+                        else {
+                            WorldLabel.enabled = false;
+                        }
                         WorldLabel.text = hit.collider.gameObject.GetComponent<myInfo>().label;
                     }
                 }
@@ -240,6 +253,7 @@ public class PlayerControlStickyGaze : MonoBehaviour
                         else
                         {
                             Debug.Log("COMBO DIDN'T WORK");
+                            MyObjects[0].GetComponent<myInfo>().wrongCombine = true;
                             this.gameObject.GetComponent<AudioSource>().Play();
                         }
                         //detachItems();
@@ -281,6 +295,7 @@ public class PlayerControlStickyGaze : MonoBehaviour
                         else
                         {
                             Debug.Log("COMBO DIDN'T WORK");
+                            MyObjects[0].GetComponent<myInfo>().wrongCombine = true;
                             this.gameObject.GetComponent<AudioSource>().Play();
                         }
                         // detachItems();
@@ -322,6 +337,7 @@ public class PlayerControlStickyGaze : MonoBehaviour
                         else
                         {
                             Debug.Log("COMBO DIDN'T WORK");
+                            MyObjects[0].GetComponent<myInfo>().wrongCombine = true;
                             this.gameObject.GetComponent<AudioSource>().Play();
                         }
                         //detachItems();
@@ -481,6 +497,17 @@ public class PlayerControlStickyGaze : MonoBehaviour
             }
             //Vector3 force = 7f * Time.deltaTime * transform.forward;
             //i.AddForce(force);
+        }
+    }
+
+    void OnTriggerEnter(Collider other) {
+        if (other.tag == "reset") {
+            Debug.Log("this worked");
+
+            for (int i = 0; i < AllObjsWithInfo.Count; i++) {
+                AllObjsWithInfo[i].gameObject.transform.position = AllObjsWithInfo[i].startPos;
+                AllObjsWithInfo[i].gameObject.transform.rotation = AllObjsWithInfo[i].startRot;
+            }
         }
     }
 }
