@@ -8,9 +8,10 @@ public class myInfo : MonoBehaviour {
     GameObject player;
     public bool watched;
     Text myLabel;
-    public string label;
+    public string label;    //item description
     public bool sallyObject;
     public bool wrongCombine;
+    public string tagReveal;    //item description with type descriptor (e.g. "explosive sticks" and "tasty")
     public Vector3 startPos;
     public Quaternion startRot;
 
