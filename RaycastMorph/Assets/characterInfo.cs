@@ -12,7 +12,7 @@ public class characterInfo : MonoBehaviour
     {
         //get the task requester:
         string requestor = playerScript.currentRequestor;
-
+        Debug.Log("EAT");
         if (collision.gameObject.tag == "COMBO")
         {
 
@@ -75,6 +75,7 @@ public class characterInfo : MonoBehaviour
     {
         playerScript = GameObject.Find("Main Camera").GetComponent<PlayerControlStickyGaze>();
         audio = this.gameObject.GetComponent<AudioSource>();
+        Debug.Log("FUCK");
     }
 
     // Update is called once per frame

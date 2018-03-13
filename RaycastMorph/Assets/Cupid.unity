@@ -397,7 +397,7 @@ MonoBehaviour:
   evil: {fileID: 0}
   good: {fileID: 0}
   taskDisplay: {fileID: 730179171}
-  TEMPNEWOBJ: {fileID: 1412508478461688, guid: 7606d9e33a63b7244bb7126953a4e162, type: 2}
+  TEMPNEWOBJ: {fileID: 1579338874781102, guid: 036d2f660eb18b04c90ff8c05cc2250e, type: 2}
   WorldLabel: {fileID: 384355104}
   inSallysRoom: 0
   task: {fileID: 0}
@@ -2875,6 +2875,7 @@ MonoBehaviour:
   label: Dead Serious
   sallyObject: 0
   wrongCombine: 0
+  tagReveal: 
   startPos: {x: 0, y: 0, z: 0}
   startRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &530042180
@@ -3190,6 +3191,7 @@ MonoBehaviour:
   label: Soiled Bag
   sallyObject: 0
   wrongCombine: 0
+  tagReveal: 
   startPos: {x: 0, y: 0, z: 0}
   startRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!54 &568378745
@@ -3758,6 +3760,7 @@ MonoBehaviour:
   label: Explosive Sticks
   sallyObject: 0
   wrongCombine: 0
+  tagReveal: 
   startPos: {x: 0, y: 0, z: 0}
   startRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1001 &724987914
@@ -4565,6 +4568,7 @@ MonoBehaviour:
   label: Dirty Money
   sallyObject: 0
   wrongCombine: 0
+  tagReveal: 
   startPos: {x: 0, y: 0, z: 0}
   startRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1001 &898699263
@@ -6207,6 +6211,7 @@ MonoBehaviour:
   label: Sally
   sallyObject: 1
   wrongCombine: 0
+  tagReveal: 
   startPos: {x: 0, y: 0, z: 0}
   startRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!82 &1168458851
@@ -6654,6 +6659,7 @@ MonoBehaviour:
   label: Bob
   sallyObject: 0
   wrongCombine: 0
+  tagReveal: 
   startPos: {x: 0, y: 0, z: 0}
   startRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!82 &1229420800
@@ -8695,6 +8701,7 @@ MonoBehaviour:
   label: Broom
   sallyObject: 0
   wrongCombine: 0
+  tagReveal: 
   startPos: {x: 0, y: 0, z: 0}
   startRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1001 &1819735549
@@ -9910,6 +9917,7 @@ MonoBehaviour:
   label: Comedic Rubber Chicken
   sallyObject: 0
   wrongCombine: 0
+  tagReveal: 
   startPos: {x: 0, y: 0, z: 0}
   startRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2032496721
