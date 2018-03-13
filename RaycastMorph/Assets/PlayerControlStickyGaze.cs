@@ -36,6 +36,8 @@ public class PlayerControlStickyGaze : MonoBehaviour {
     //Public Tasks
     int taskNum = 1;
 
+   
+
     // Use this for initialization
     void Start() {
         currentRequestor = "Sally";

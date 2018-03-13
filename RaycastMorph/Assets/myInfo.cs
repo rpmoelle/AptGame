@@ -15,14 +15,25 @@ public class myInfo : MonoBehaviour {
     public Vector3 startPos;
     public Quaternion startRot;
 
-    //isabella: make a separate text field (label) that shows after it's been wrongly combined to tell the stats. need new bool too
+ 
 
-    // Use this for initialization
-    void Start() {
+   
+
+  
+
+//isabella: make a separate text field (label) that shows after it's been wrongly combined to tell the stats. need new bool too
+
+// Use this for initialization
+void Start() {
         myLabel = GameObject.Find("ScreenCanvas/ItemLabel").GetComponent<Text>();
         wrongCombine = false;
         startPos = this.gameObject.transform.position;
         startRot = this.gameObject.transform.rotation;
+
+        if (tag == "COMBO")
+        {
+            transform.localRotation *= Quaternion.Euler(0, 180, 0);
+        }
     }
 
     // Update is called once per frame
@@ -39,5 +50,8 @@ public class myInfo : MonoBehaviour {
         else {
             //if (myLabel != null) myLabel.enabled = false;
         }
+
+        //Get the present to look at the player
+        
     }
 }
