@@ -41,9 +41,9 @@ public class PlayerControl : MonoBehaviour {
         }
 
         float z = Input.GetAxis("Vertical") * Time.deltaTime;
-        gameObject.transform.position += z * transform.forward * 2f;
+        gameObject.transform.position += z * transform.forward * 5f;
         float x = Input.GetAxis("Horizontal") * Time.deltaTime;
-        gameObject.transform.position += x * transform.right * 2f;
+        gameObject.transform.position += x * transform.right * 5f;
 
         this.gameObject.transform.position = new Vector3(gameObject.transform.position.x, 0.93f, gameObject.transform.position.z);
 

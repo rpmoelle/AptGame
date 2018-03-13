@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerControlStickyGaze : MonoBehaviour {
 
@@ -208,9 +209,9 @@ public class PlayerControlStickyGaze : MonoBehaviour {
 
     void Movement() {
         float z = Input.GetAxis("Vertical") * Time.deltaTime;
-        gameObject.transform.position += z * transform.forward * 2f;
+        gameObject.transform.position += z * transform.forward * 5f;
         float x = Input.GetAxis("Horizontal") * Time.deltaTime;
-        gameObject.transform.position += x * transform.right * 2f;
+        gameObject.transform.position += x * transform.right * 5f;
 
         this.gameObject.transform.position = new Vector3(gameObject.transform.position.x, 0.93f, gameObject.transform.position.z);
 
@@ -319,6 +320,12 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             temp.GetComponent<Rigidbody>().freezeRotation = true;
                             temp.GetComponent<Rigidbody>().angularDrag = 0f;
                             temp.GetComponent<Rigidbody>().mass = 1f;
+                            //Show the item's label on the present's tag
+                            Debug.Log(temp.transform.GetChild(0).name);
+                            Debug.Log(temp.transform.GetChild(0).transform.GetChild(0).name);
+                            TextMeshProUGUI tmpro = temp.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();//sorry this is because it defaults the text like three children down :(
+                            tmpro.SetText(temp.name);
+
                             //Debug.Log(MyObjects.Count);
                         }
                         else {
@@ -352,6 +359,12 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             temp.GetComponent<Rigidbody>().freezeRotation = true;
                             temp.GetComponent<Rigidbody>().angularDrag = 0f;
                             temp.GetComponent<Rigidbody>().mass = 1f;
+
+                            //Show the item's label on the present's tag
+                            Debug.Log(temp.transform.GetChild(0).name);
+                            Debug.Log(temp.transform.GetChild(0).transform.GetChild(0).name);
+                            TextMeshProUGUI tmpro = temp.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();//sorry this is because it defaults the text like three children down :(
+                            tmpro.SetText(temp.name);
                         }
                         else {
                             Debug.Log("COMBO DIDN'T WORK");
@@ -382,6 +395,12 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             temp.GetComponent<Rigidbody>().freezeRotation = true;
                             temp.GetComponent<Rigidbody>().angularDrag = 0f;
                             temp.GetComponent<Rigidbody>().mass = 1f;
+
+                            //Show the item's label on the present's tag
+                            Debug.Log(temp.transform.GetChild(0).name);
+                            Debug.Log(temp.transform.GetChild(0).transform.GetChild(0).name);
+                            TextMeshProUGUI tmpro = temp.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();//sorry this is because it defaults the text like three children down :(
+                            tmpro.SetText(temp.name);
                         }
                         else {
                             Debug.Log("COMBO DIDN'T WORK");
