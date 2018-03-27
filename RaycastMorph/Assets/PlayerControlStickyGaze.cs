@@ -330,8 +330,10 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         }
                         else {
                             Debug.Log("COMBO DIDN'T WORK");
-                            objectInfo.wrongCombine = true;
-                            objectInfo.label += " (" + objectInfo.tag + ")";
+                            if (objectInfo.wrongCombine == false) {
+                                objectInfo.wrongCombine = true;
+                                objectInfo.label += " (" + objectInfo.tag + ")";
+                            }
                             this.gameObject.GetComponent<AudioSource>().Play();
                         }
 
@@ -368,8 +370,10 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         }
                         else {
                             Debug.Log("COMBO DIDN'T WORK");
-                            objectInfo.wrongCombine = true;
-                            objectInfo.label += " (" + objectInfo.tag + ")";
+                            if (objectInfo.wrongCombine == false) {
+                                objectInfo.wrongCombine = true;
+                                objectInfo.label += " (" + objectInfo.tag + ")";
+                            }
                             this.gameObject.GetComponent<AudioSource>().Play();
                         }
 
@@ -404,8 +408,10 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         }
                         else {
                             Debug.Log("COMBO DIDN'T WORK");
-                            objectInfo.wrongCombine = true;
-                            objectInfo.label += " (" + objectInfo.tag + ")";
+                            if (objectInfo.wrongCombine == false) {
+                                objectInfo.wrongCombine = true;
+                                objectInfo.label += " (" + objectInfo.tag + ")";
+                            }
                             this.gameObject.GetComponent<AudioSource>().Play();
                         }
 
