@@ -215,11 +215,11 @@ public class PlayerControlStickyGaze : MonoBehaviour {
 
         this.gameObject.transform.position = new Vector3(gameObject.transform.position.x, 0.93f, gameObject.transform.position.z);
 
-        //player.transform.localEulerAngles = new Vector3(player.transform.localEulerAngles.x, player.transform.localEulerAngles.y + Input.GetAxis("Mouse X") * 2f, player.transform.localEulerAngles.z);
-        //player.transform.localEulerAngles = new Vector3(player.transform.localEulerAngles.x + Input.GetAxis("Mouse Y") * -2f, player.transform.localEulerAngles.y, player.transform.localEulerAngles.z);
+        player.transform.localEulerAngles = new Vector3(player.transform.localEulerAngles.x, player.transform.localEulerAngles.y + Input.GetAxis("Mouse X") * 2f, player.transform.localEulerAngles.z);
+        player.transform.localEulerAngles = new Vector3(player.transform.localEulerAngles.x + Input.GetAxis("Mouse Y") * -2f, player.transform.localEulerAngles.y, player.transform.localEulerAngles.z);
 
-        cam.transform.localEulerAngles = new Vector3(cam.transform.localEulerAngles.x, cam.transform.localEulerAngles.y + Input.GetAxis("Mouse X") * 2f, cam.transform.localEulerAngles.z);
-        cam.transform.localEulerAngles = new Vector3(cam.transform.localEulerAngles.x + Input.GetAxis("Mouse Y") * -2f, cam.transform.localEulerAngles.y, cam.transform.localEulerAngles.z);
+        //cam.transform.localEulerAngles = new Vector3(cam.transform.localEulerAngles.x, cam.transform.localEulerAngles.y + Input.GetAxis("Mouse X") * 2f, cam.transform.localEulerAngles.z);
+        //cam.transform.localEulerAngles = new Vector3(cam.transform.localEulerAngles.x + Input.GetAxis("Mouse Y") * -2f, cam.transform.localEulerAngles.y, cam.transform.localEulerAngles.z);
     }
 
     void CastRay() {

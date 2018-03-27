@@ -157,8 +157,13 @@ MonoBehaviour:
   m_MinSize: {x: 787, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 10836
 --- !u!114 &8
+=======
+  controlID: 295
+--- !u!114 &6
+>>>>>>> master
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -182,8 +187,13 @@ MonoBehaviour:
   m_MinSize: {x: 787, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
+<<<<<<< HEAD
   controlID: 10837
 --- !u!114 &9
+=======
+  controlID: 296
+--- !u!114 &7
+>>>>>>> master
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -231,8 +241,13 @@ MonoBehaviour:
   m_MinSize: {x: 408, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 10838
 --- !u!114 &11
+=======
+  controlID: 297
+--- !u!114 &9
+>>>>>>> master
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -418,10 +433,17 @@ MonoBehaviour:
     height: 926
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 387}
     m_SelectedIDs: 483f0000
     m_LastClickedID: 16200
     m_ExpandedIDs: 02a0ffff06a0ffff0aa0ffff14a0ffff16a0ffff3ea0ffff4ea0ffffe6faffff00000000183e0000483f000058410000
+=======
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 2a070000
+    m_LastClickedID: 0
+    m_ExpandedIDs: 98fbffff00000000
+>>>>>>> master
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -596,10 +618,17 @@ MonoBehaviour:
   m_LastProjectPath: C:\Users\ttolu\Documents\Graduate School\Year_001\Spring\StudioII\TeamWhomst\AptGame\RaycastMorph
   m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 51}
     m_SelectedIDs: 24350000
     m_LastClickedID: 13604
     m_ExpandedIDs: 000000003e300000d634000024350000fa3600006e37000000ca9a3bffffff7f
+=======
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 64290000
+    m_LastClickedID: 10596
+    m_ExpandedIDs: 0000000064290000fc2d0000482e00001e30000000ca9a3bffffff7f
+>>>>>>> master
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -627,7 +656,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 000000003e300000d634000024350000fa3600006e37000000ca9a3bffffff7f
+=======
+    m_ExpandedIDs: 0000000064290000fc2d0000482e00001e30000000ca9a3bffffff7f
+>>>>>>> master
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
