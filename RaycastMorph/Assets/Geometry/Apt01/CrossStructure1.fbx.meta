@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: c18adefd3420aad498273b621d59e9b8
-timeCreated: 1522029258
+guid: ee6e9585094ab594f8adf6d502675325
+timeCreated: 1522120281
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -11,9 +11,7 @@ ModelImporter:
     400000: 4UNITY
     400002: CrossStructure1
     400004: //RootNode
-    2100000: Metal01
-    2100002: Metal03
-    2100004: Metal02
+    2100000: lambert1
     2300000: CrossStructure1
     3300000: CrossStructure1
     4300000: CrossStructure1
