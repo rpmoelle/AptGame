@@ -12,10 +12,10 @@ public class characterInfo : MonoBehaviour
     {
         //get the task requester:
         string requestor = playerScript.currentRequestor;
-        Debug.Log("EAT");
+        Debug.Log("EAT"+ collision.gameObject.name);
         if (collision.gameObject.tag == "COMBO")
         {
-
+            Debug.Log("COMBO..." + requestor);
             //if this is a sally object
             if (this.gameObject.name == requestor)
             {
@@ -28,6 +28,11 @@ public class characterInfo : MonoBehaviour
                 playerScript.detachItems();
                 playerScript.cleanCam();
                 playerScript.nextTask();
+
+                if(collision.gameObject.name == "Popcorn")
+                {
+                    Destroy(playerScript.door1);
+                }
             }
             if (!playerScript.gameObject.GetComponent<AudioSource>().isPlaying)
             {
@@ -73,7 +78,7 @@ public class characterInfo : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        playerScript = GameObject.Find("Main Camera").GetComponent<PlayerControlStickyGaze>();
+        //playerScript = GameObject.Find("Main Camera").GetComponent<PlayerControlStickyGaze>();
         audio = this.gameObject.GetComponent<AudioSource>();
         Debug.Log("FUCK");
     }

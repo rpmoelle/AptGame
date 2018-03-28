@@ -32,6 +32,8 @@ public class PlayerControlStickyGaze : MonoBehaviour {
     public Text task;
     public string currentRequestor;
 
+    public GameObject door1;
+
     List<myInfo> AllObjsWithInfo = new List<myInfo>();  //reference list of all the "MyInfo" scripts in the scene
 
     //Public Tasks
@@ -50,6 +52,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
     }
 
     void Update() {
+        Debug.Log("Current requestor: " + currentRequestor);
         //Debug.Log("my obj" + MyObjects.Count);
         Cursor.lockState = CursorLockMode.Locked;
         
@@ -109,12 +112,12 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                 }
             case 2:
                 {
-                    return "MAKE REQUEST: Bob - About to live tweet the fireworks show! MAKE me something TASTY and EXPLOSIVE to eat during the show.";
+                    return "MAKE REQUEST: Bob - About to live tweet the fireworks show! MAKE me something TASTY and EXPLOSIVE to eat during the show and I'll unlock the theatre for you!";
                     break;
                 }
             case 3:
                 {
-                    return "FIND ME REQUEST: Petunia - I'm locked in the theatre watching a terrible film! Bring me a COMEDIC and DRAMATIC film that's better!";
+                    return "REQUEST: Sally - All the films I have are so 1 dimensional! MAKE me a COMEDIC and DRAMATIC film that's better!";
                     break;
                 }
         }
@@ -179,7 +182,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
             i.useGravity = true;
             if (i.gameObject.GetComponent<myInfo>() != null) {
                 i.gameObject.GetComponent<myInfo>().grabbed = false;
-                i.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+               // i.gameObject.GetComponent<Rigidbody>().isKinematic = false;
                 i.gameObject.GetComponent<Rigidbody>().useGravity = true;
             }
         }
@@ -230,6 +233,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
         if (Physics.Raycast(ray, out hit, 3f)) {    //the 10f is the length the ray extends in distance 
             //A collision occured between the ray and a thing
             if (hit.collider != null && hit.collider != floor && hit.collider.gameObject != cam && Input.GetKeyDown(KeyCode.LeftShift)) {
+                //pick it up
                 hit.collider.gameObject.GetComponent<Rigidbody>().useGravity = false;
                 hit.collider.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 hit.collider.transform.parent = cam.transform;
@@ -313,13 +317,13 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;//standardize this to be a uniform location infront of camera
                             GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
-
-                            temp.name = "Clean and dirty item.";
+                            temp.GetComponent<myInfo>().label = "Slimy Cucumber";
+                            temp.name = "SlimyCucumber";
                             temp.GetComponent<myInfo>().sallyObject = true;
                             detachItems();
                             cleanCam();
                             temp.GetComponent<Rigidbody>().useGravity = true;
-                            temp.GetComponent<Rigidbody>().isKinematic = false;
+                            //temp.GetComponent<Rigidbody>().isKinematic = false;
                             temp.GetComponent<Rigidbody>().freezeRotation = true;
                             temp.GetComponent<Rigidbody>().angularDrag = 0f;
                             temp.GetComponent<Rigidbody>().mass = 1f;
@@ -357,10 +361,13 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             temp.name = "Popcorn";
                             temp.GetComponent<myInfo>().sallyObject = false;
 
+                            //open the door
+                            
+
                             detachItems();
                             cleanCam();
                             temp.GetComponent<Rigidbody>().useGravity = true;
-                            temp.GetComponent<Rigidbody>().isKinematic = false;
+                            //temp.GetComponent<Rigidbody>().isKinematic = false;
                             temp.GetComponent<Rigidbody>().freezeRotation = true;
                             temp.GetComponent<Rigidbody>().angularDrag = 0f;
                             temp.GetComponent<Rigidbody>().mass = 1f;
@@ -398,7 +405,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             detachItems();
                             cleanCam();
                             temp.GetComponent<Rigidbody>().useGravity = true;
-                            temp.GetComponent<Rigidbody>().isKinematic = false;
+                           // temp.GetComponent<Rigidbody>().isKinematic = false;
                             temp.GetComponent<Rigidbody>().freezeRotation = true;
                             temp.GetComponent<Rigidbody>().angularDrag = 0f;
                             temp.GetComponent<Rigidbody>().mass = 1f;
