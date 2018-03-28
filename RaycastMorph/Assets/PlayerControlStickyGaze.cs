@@ -236,7 +236,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                 //pick it up
                 hit.collider.gameObject.GetComponent<Rigidbody>().useGravity = false;
                 hit.collider.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-                hit.collider.transform.parent = cam.transform;
+                hit.collider.transform.parent = cam.transform;//was cam.transform
                 MyObjects.Add(hit.collider.gameObject);
                 if (hit.collider.GetComponent<myInfo>() != null) {
                     hit.collider.GetComponent<myInfo>().grabbed = true;

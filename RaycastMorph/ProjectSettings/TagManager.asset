@@ -21,6 +21,7 @@ TagManager:
   - comedic
   - dirty
   - reset
+  - profittable
   layers:
   - Default
   - TransparentFX
