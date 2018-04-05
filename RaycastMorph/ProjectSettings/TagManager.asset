@@ -22,6 +22,14 @@ TagManager:
   - dirty
   - reset
   - profittable
+  - hot
+  - risky
+  - shocking
+  - evil
+  - acidic
+  - basic
+  - funky
+  - medicinal
   layers:
   - Default
   - TransparentFX

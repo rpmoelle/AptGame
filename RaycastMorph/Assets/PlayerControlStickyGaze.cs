@@ -96,7 +96,22 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                 }
             case 3:
                 {
-                    currentRequestor = "Petunia";
+                    currentRequestor = "Jill";
+                    break;
+                }
+            case 4:
+                {
+                    currentRequestor = "Sally";
+                    break;
+                }
+            case 5:
+                {
+                    currentRequestor = "Jill";
+                    break;
+                }
+            case 6:
+                {
+                    currentRequestor = "Bob";
                     break;
                 }
         }
@@ -107,17 +122,32 @@ public class PlayerControlStickyGaze : MonoBehaviour {
         {
             case 1:
                 {
-                    return "ITEM REQUEST: Sally - My honey, the executive, is coming over. BRING me something DIRTY to get me in the mood, but also CLEAN to keep it classy.";
+                    return "REQUEST: Sally - My honey, the executive, is coming over. Bring me something DIRTY to get me in the mood, but also CLEAN to keep it classy.";
                     break;
                 }
             case 2:
                 {
-                    return "MAKE REQUEST: Bob - About to live tweet the fireworks show! MAKE me something TASTY and EXPLOSIVE to eat during the show and I'll unlock the theatre for you!";
+                    return "REQUEST: Bob - About to live tweet the fireworks show! Make me something TASTY and EXPLOSIVE to eat during the show and I'll unlock the theatre for you!";
                     break;
                 }
             case 3:
                 {
-                    return "REQUEST: Sally - All the films I have are so 1 dimensional! MAKE me a COMEDIC and DRAMATIC film that's better!";
+                    return "REQUEST: Jill - My novel is so cliche! Bring me some HOT and RISKY inspiration!";
+                    break;
+                }
+            case 4:
+                {
+                    return "REQUEST: Sally - I need something provocative in my photography portfolio. Make me something SHOCKING and EVIL to photograph.";
+                    break;
+                }
+            case 5:
+                {
+                    return "REQUEST: Jill - My pH is off balance. Bring me something BASIC and ACIDIC to balance it out.";
+                    break;
+                }
+            case 6:
+                {
+                    return "REQUEST: Bob - I’m dying of disco fever! Make me something FUNKY and MEDICINAL to cure me!";
                     break;
                 }
         }
@@ -391,15 +421,15 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                     }
                 case 3: {
                         //find comedic and dramatic
-                        if (checkMatchingTags("comedic", "dramatic")) {
+                        if (checkMatchingTags("hot", "risky")) {
                             //success
                             Debug.Log("YOU COMBINED CORRECTLY");
 
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;
                             GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
-                            temp.GetComponent<myInfo>().label = "Better Film";
-                            temp.name = "BetterFilm";
+                            temp.GetComponent<myInfo>().label = "Inevitable Spicy Poops";
+                            temp.name = "SpicyPoops";
                             temp.GetComponent<myInfo>().sallyObject = true;
 
                             detachItems();
@@ -419,6 +449,132 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         else {
                             Debug.Log("COMBO DIDN'T WORK");
                             if (objectInfo.wrongCombine == false) {
+                                objectInfo.wrongCombine = true;
+                                objectInfo.label += " (" + objectInfo.tag + ")";
+                            }
+                            this.gameObject.GetComponent<AudioSource>().Play();
+                        }
+
+                        break;
+                    }
+                case 4:
+                    {
+                        //find comedic and dramatic
+                        if (checkMatchingTags("shocking", "evil"))
+                        {
+                            //success
+                            Debug.Log("YOU COMBINED CORRECTLY");
+
+                            //Remove old objects for new one
+                            Vector3 pos = MyObjects[0].transform.position;
+                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
+                            temp.GetComponent<myInfo>().label = "Glowing Scythe";
+                            temp.name = "GlowingScythe";
+                            temp.GetComponent<myInfo>().sallyObject = true;
+
+                            detachItems();
+                            cleanCam();
+                            temp.GetComponent<Rigidbody>().useGravity = true;
+                            // temp.GetComponent<Rigidbody>().isKinematic = false;
+                            temp.GetComponent<Rigidbody>().freezeRotation = true;
+                            temp.GetComponent<Rigidbody>().angularDrag = 0f;
+                            temp.GetComponent<Rigidbody>().mass = 1f;
+
+                            //Show the item's label on the present's tag
+                            Debug.Log(temp.transform.GetChild(0).name);
+                            Debug.Log(temp.transform.GetChild(0).transform.GetChild(0).name);
+                            TextMeshProUGUI tmpro = temp.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();//sorry this is because it defaults the text like three children down :(
+                            tmpro.SetText(temp.name);
+                        }
+                        else
+                        {
+                            Debug.Log("COMBO DIDN'T WORK");
+                            if (objectInfo.wrongCombine == false)
+                            {
+                                objectInfo.wrongCombine = true;
+                                objectInfo.label += " (" + objectInfo.tag + ")";
+                            }
+                            this.gameObject.GetComponent<AudioSource>().Play();
+                        }
+
+                        break;
+                    }
+                case 5:
+                    {
+                        //find comedic and dramatic
+                        if (checkMatchingTags("basic", "acidic"))
+                        {
+                            //success
+                            Debug.Log("YOU COMBINED CORRECTLY");
+
+                            //Remove old objects for new one
+                            Vector3 pos = MyObjects[0].transform.position;
+                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
+                            temp.GetComponent<myInfo>().label = "Margarita";
+                            temp.name = "Margarita";
+                            temp.GetComponent<myInfo>().sallyObject = true;
+
+                            detachItems();
+                            cleanCam();
+                            temp.GetComponent<Rigidbody>().useGravity = true;
+                            // temp.GetComponent<Rigidbody>().isKinematic = false;
+                            temp.GetComponent<Rigidbody>().freezeRotation = true;
+                            temp.GetComponent<Rigidbody>().angularDrag = 0f;
+                            temp.GetComponent<Rigidbody>().mass = 1f;
+
+                            //Show the item's label on the present's tag
+                            Debug.Log(temp.transform.GetChild(0).name);
+                            Debug.Log(temp.transform.GetChild(0).transform.GetChild(0).name);
+                            TextMeshProUGUI tmpro = temp.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();//sorry this is because it defaults the text like three children down :(
+                            tmpro.SetText(temp.name);
+                        }
+                        else
+                        {
+                            Debug.Log("COMBO DIDN'T WORK");
+                            if (objectInfo.wrongCombine == false)
+                            {
+                                objectInfo.wrongCombine = true;
+                                objectInfo.label += " (" + objectInfo.tag + ")";
+                            }
+                            this.gameObject.GetComponent<AudioSource>().Play();
+                        }
+
+                        break;
+                    }
+                case 6:
+                    {
+                        //find comedic and dramatic
+                        if (checkMatchingTags("funky", "medicinal"))
+                        {
+                            //success
+                            Debug.Log("YOU COMBINED CORRECTLY");
+
+                            //Remove old objects for new one
+                            Vector3 pos = MyObjects[0].transform.position;
+                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
+                            temp.GetComponent<myInfo>().label = "Disco Ball Cheese Pills";
+                            temp.name = "DiscoPills";
+                            temp.GetComponent<myInfo>().sallyObject = true;
+
+                            detachItems();
+                            cleanCam();
+                            temp.GetComponent<Rigidbody>().useGravity = true;
+                            // temp.GetComponent<Rigidbody>().isKinematic = false;
+                            temp.GetComponent<Rigidbody>().freezeRotation = true;
+                            temp.GetComponent<Rigidbody>().angularDrag = 0f;
+                            temp.GetComponent<Rigidbody>().mass = 1f;
+
+                            //Show the item's label on the present's tag
+                            Debug.Log(temp.transform.GetChild(0).name);
+                            Debug.Log(temp.transform.GetChild(0).transform.GetChild(0).name);
+                            TextMeshProUGUI tmpro = temp.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();//sorry this is because it defaults the text like three children down :(
+                            tmpro.SetText(temp.name);
+                        }
+                        else
+                        {
+                            Debug.Log("COMBO DIDN'T WORK");
+                            if (objectInfo.wrongCombine == false)
+                            {
                                 objectInfo.wrongCombine = true;
                                 objectInfo.label += " (" + objectInfo.tag + ")";
                             }
