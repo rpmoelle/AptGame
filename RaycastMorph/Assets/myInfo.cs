@@ -42,8 +42,9 @@ void Start() {
         }
 
         if (presentParti != null) {
+            kakarot.Stop();
             if (partiStart == true) {
-                presentParti.Play();
+                kakarot.Play();
                 //partiStart = false;
             }
         }

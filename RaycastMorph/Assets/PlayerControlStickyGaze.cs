@@ -23,7 +23,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
     public Text taskDisplay;
     GameObject greenCube;
     public GameObject TEMPNEWOBJ;
-    public bool presentGet; //play the particles cause you got the present yay - equal to partiStart in myInfo
+    public ParticleSystem presentGet;
 
     List<GameObject> MyObjects = new List<GameObject>();
     myInfo objectInfo; //info on the object from MyObjects[0]
@@ -51,7 +51,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
         }
         //Debug.Log(AllObjsWithInfo[0].gameObject.name);
 
-        presentGet = false;
+        presentGet.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z + 2);
     }
 
     void Update() {
@@ -65,6 +65,11 @@ public class PlayerControlStickyGaze : MonoBehaviour {
         LaunchStuff();  //push r to launch stuff in the direction of the camera
         Detach();       //push space to release stuff
         Combine();      //check combining objects
+
+        if (presentGet.isEmitting) {
+            StartCoroutine("stopParti");
+            //presentGet.Stop();
+        }
     }
 
     public void cleanCam() {
@@ -354,7 +359,13 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             temp.GetComponent<myInfo>().label = "Slimy Cucumber";
                             temp.name = "SlimyCucumber";
                             temp.GetComponent<myInfo>().sallyObject = true;
+
+                            //particles
+                            presentGet.transform.position = temp.transform.position;
+                            presentGet.transform.parent = this.gameObject.transform;
+                            presentGet.Play();
                             temp.GetComponent<myInfo>().partiStart = true;
+
                             detachItems();
                             cleanCam();
                             temp.GetComponent<Rigidbody>().useGravity = true;
@@ -391,6 +402,11 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;
                             GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);    //move this to infront of camera
+
+                            //particles
+                            presentGet.transform.position = temp.transform.position;
+                            presentGet.transform.parent = this.gameObject.transform;
+                            presentGet.Play();
                             temp.GetComponent<myInfo>().partiStart = true;
 
                             temp.GetComponent<myInfo>().label = "Popcorn";
@@ -437,6 +453,11 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             temp.GetComponent<myInfo>().label = "Inevitable Spicy Poops";
                             temp.name = "SpicyPoops";
                             temp.GetComponent<myInfo>().sallyObject = true;
+
+                            //particles
+                            presentGet.transform.position = temp.transform.position;
+                            presentGet.transform.parent = this.gameObject.transform;
+                            presentGet.Play();
                             temp.GetComponent<myInfo>().partiStart = true;
 
                             detachItems();
@@ -478,6 +499,11 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             temp.GetComponent<myInfo>().label = "Glowing Scythe";
                             temp.name = "GlowingScythe";
                             temp.GetComponent<myInfo>().sallyObject = true;
+
+                            //particles
+                            presentGet.transform.position = temp.transform.position;
+                            presentGet.transform.parent = this.gameObject.transform;
+                            presentGet.Play();
                             temp.GetComponent<myInfo>().partiStart = true;
 
                             detachItems();
@@ -521,6 +547,11 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             temp.GetComponent<myInfo>().label = "Margarita";
                             temp.name = "Margarita";
                             temp.GetComponent<myInfo>().sallyObject = true;
+
+                            //particles
+                            presentGet.transform.position = temp.transform.position;
+                            presentGet.transform.parent = this.gameObject.transform;
+                            presentGet.Play();
                             temp.GetComponent<myInfo>().partiStart = true;
 
                             detachItems();
@@ -564,6 +595,11 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             temp.GetComponent<myInfo>().label = "Disco Ball Cheese Pills";
                             temp.name = "DiscoPills";
                             temp.GetComponent<myInfo>().sallyObject = true;
+
+                            //particles
+                            presentGet.transform.position = temp.transform.position;
+                            presentGet.transform.parent = this.gameObject.transform;
+                            presentGet.Play();
                             temp.GetComponent<myInfo>().partiStart = true;
 
                             detachItems();
@@ -596,4 +632,10 @@ public class PlayerControlStickyGaze : MonoBehaviour {
             }
         }
     }
+
+    IEnumerator stopParti() {
+        yield return new WaitForSeconds(1f);
+        presentGet.Stop();
+    }
+
 }
