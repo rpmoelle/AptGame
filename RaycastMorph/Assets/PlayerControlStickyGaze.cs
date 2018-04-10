@@ -23,6 +23,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
     public Text taskDisplay;
     GameObject greenCube;
     public GameObject TEMPNEWOBJ;
+    public bool presentGet; //play the particles cause you got the present yay - equal to partiStart in myInfo
 
     List<GameObject> MyObjects = new List<GameObject>();
     myInfo objectInfo; //info on the object from MyObjects[0]
@@ -49,6 +50,8 @@ public class PlayerControlStickyGaze : MonoBehaviour {
             AllObjsWithInfo.Add(FindObjectsOfType<myInfo>()[i]);
         }
         //Debug.Log(AllObjsWithInfo[0].gameObject.name);
+
+        presentGet = false;
     }
 
     void Update() {
@@ -351,6 +354,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             temp.GetComponent<myInfo>().label = "Slimy Cucumber";
                             temp.name = "SlimyCucumber";
                             temp.GetComponent<myInfo>().sallyObject = true;
+                            temp.GetComponent<myInfo>().partiStart = true;
                             detachItems();
                             cleanCam();
                             temp.GetComponent<Rigidbody>().useGravity = true;
@@ -387,6 +391,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;
                             GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);    //move this to infront of camera
+                            temp.GetComponent<myInfo>().partiStart = true;
 
                             temp.GetComponent<myInfo>().label = "Popcorn";
                             temp.name = "Popcorn";
@@ -432,6 +437,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             temp.GetComponent<myInfo>().label = "Inevitable Spicy Poops";
                             temp.name = "SpicyPoops";
                             temp.GetComponent<myInfo>().sallyObject = true;
+                            temp.GetComponent<myInfo>().partiStart = true;
 
                             detachItems();
                             cleanCam();
@@ -472,6 +478,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             temp.GetComponent<myInfo>().label = "Glowing Scythe";
                             temp.name = "GlowingScythe";
                             temp.GetComponent<myInfo>().sallyObject = true;
+                            temp.GetComponent<myInfo>().partiStart = true;
 
                             detachItems();
                             cleanCam();
@@ -514,6 +521,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             temp.GetComponent<myInfo>().label = "Margarita";
                             temp.name = "Margarita";
                             temp.GetComponent<myInfo>().sallyObject = true;
+                            temp.GetComponent<myInfo>().partiStart = true;
 
                             detachItems();
                             cleanCam();
@@ -556,6 +564,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             temp.GetComponent<myInfo>().label = "Disco Ball Cheese Pills";
                             temp.name = "DiscoPills";
                             temp.GetComponent<myInfo>().sallyObject = true;
+                            temp.GetComponent<myInfo>().partiStart = true;
 
                             detachItems();
                             cleanCam();

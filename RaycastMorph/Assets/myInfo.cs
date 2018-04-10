@@ -14,6 +14,9 @@ public class myInfo : MonoBehaviour {
     public string tagReveal;    //item description with type descriptor (e.g. "explosive sticks" and "tasty")
     public Vector3 startPos;
     public Quaternion startRot;
+    public ParticleSystem kakarot;  //the weakest of the saiyans
+    public ParticleSystem presentParti; //trigger the parti
+    public bool partiStart;
 
 
 // Use this for initialization
@@ -22,6 +25,9 @@ void Start() {
         wrongCombine = false;
         startPos = this.gameObject.transform.position;
         startRot = this.gameObject.transform.rotation;
+        kakarot.transform.position = startPos;
+        kakarot.Play();
+        partiStart = false;
 
         if (tag == "COMBO")
         {
@@ -31,6 +37,17 @@ void Start() {
 
     // Update is called once per frame
     void Update() {
+        if (kakarot != null) {
+            kakarot.Play();
+        }
+
+        if (presentParti != null) {
+            if (partiStart == true) {
+                presentParti.Play();
+                //partiStart = false;
+            }
+        }
+
         if (grabbed) {
             //if grabbed, follow the mother ray
             //become its child
