@@ -15,13 +15,6 @@ public class myInfo : MonoBehaviour {
     public Vector3 startPos;
     public Quaternion startRot;
 
- 
-
-   
-
-  
-
-//isabella: make a separate text field (label) that shows after it's been wrongly combined to tell the stats. need new bool too
 
 // Use this for initialization
 void Start() {

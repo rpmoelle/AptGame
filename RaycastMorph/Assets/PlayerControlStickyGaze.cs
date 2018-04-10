@@ -52,7 +52,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
     }
 
     void Update() {
-        Debug.Log("Current requestor: " + currentRequestor);
+        //Debug.Log("Current requestor: " + currentRequestor);
         //Debug.Log("my obj" + MyObjects.Count);
         Cursor.lockState = CursorLockMode.Locked;
         
@@ -219,6 +219,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other) {
+        //Debug.Log("triggered");
         if (other.tag == "reset") {
             //Debug.Log("this worked");
 
