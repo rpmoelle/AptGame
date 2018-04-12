@@ -16,7 +16,8 @@ public class myInfo : MonoBehaviour {
     public Quaternion startRot;
     public ParticleSystem kakarot;  //the weakest of the saiyans
     public ParticleSystem presentParti; //trigger the parti
-    public bool partiStart;
+    public bool partiStart; //camera you combined right parti
+    public bool binaryParti;    //binary parti youre looking at an object parti
 
 
 // Use this for initialization
@@ -25,9 +26,12 @@ void Start() {
         wrongCombine = false;
         startPos = this.gameObject.transform.position;
         startRot = this.gameObject.transform.rotation;
-        kakarot.transform.position = startPos;
-        kakarot.Play();
+        if (kakarot != null) {
+            kakarot.transform.position = startPos;
+            //kakarot.Stop();
+        }
         partiStart = false;
+        binaryParti = false;
 
         if (tag == "COMBO")
         {
@@ -38,7 +42,12 @@ void Start() {
     // Update is called once per frame
     void Update() {
         if (kakarot != null) {
-            kakarot.Play();
+            if (binaryParti) {
+                kakarot.Play();
+            }
+            else {
+                kakarot.Stop();
+            }
         }
 
         if (presentParti != null) {

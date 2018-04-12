@@ -163,12 +163,6 @@ public class PlayerControlStickyGaze : MonoBehaviour {
     }
 
     void turnOffAllLabels() {
-        //Text[] labels = WorldLabels.GetComponentsInChildren<Text>();
-        //turn off all labels
-        /* foreach(Text t in labels)
-         {
-             t.enabled = false;
-         }*/
         WorldLabel.text = "";
     }
 
@@ -177,12 +171,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
         bool got1 = false;
         bool got2 = false;
 
-        //check if one object is from each side
-        //Debug.Log("ITS ME" + MyObjects.Count);
-
         foreach (GameObject g in MyObjects) {
-            //Debug.Log("ITS ME" + g.name);
-            //Debug.Log("ITS ME " + g.tag); //problem: i think its going through every childNOPE
             if (!got1 || !got2) {
                 if (g.tag == key1) {
                     got1 = true;
@@ -230,7 +219,6 @@ public class PlayerControlStickyGaze : MonoBehaviour {
         //Debug.Log("triggered");
         if (other.tag == "reset") {
             //Debug.Log("this worked");
-
             for (int i = 0; i < AllObjsWithInfo.Count; i++) {
                 AllObjsWithInfo[i].gameObject.transform.position = AllObjsWithInfo[i].startPos;
                 AllObjsWithInfo[i].gameObject.transform.rotation = AllObjsWithInfo[i].startRot;
@@ -275,10 +263,13 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                 //pick it up
                 hit.collider.gameObject.GetComponent<Rigidbody>().useGravity = false;
                 hit.collider.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                Debug.Log("HOLDING: parti turned off");
+                hit.collider.gameObject.GetComponent<myInfo>().binaryParti = false;    //turn off partis when you're holding the object
                 hit.collider.transform.parent = cam.transform;//was cam.transform
                 MyObjects.Add(hit.collider.gameObject);
                 if (hit.collider.GetComponent<myInfo>() != null) {
                     hit.collider.GetComponent<myInfo>().grabbed = true;
+                    hit.collider.gameObject.GetComponent<myInfo>().binaryParti = false;
                 }
                 //hit.collider.transform.GetComponent<Rigidbody>().velocity = cam.transform.GetComponent<Rigidbody>().velocity;
             }
@@ -294,8 +285,6 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                 if (hit.collider.gameObject.GetComponent<myInfo>() != null) {
                     hit.collider.gameObject.GetComponent<myInfo>().watched = true;
                     if (hit.collider.gameObject.GetComponent<myInfo>().label != null) {
-                        //Debug.Log("WOOO");
-
                         WorldLabel.enabled = true;
                         //if (hit.collider.gameObject.GetComponent<myInfo>().wrongCombine) {
                         //    WorldLabel.enabled = true;
@@ -303,7 +292,16 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         //else {
                         //    WorldLabel.enabled = false;
                         //}
+
+                        //put particles here
                         WorldLabel.text = hit.collider.gameObject.GetComponent<myInfo>().label;
+                        if (!hit.collider.gameObject.GetComponent<myInfo>().grabbed) {
+                            Debug.Log("turning on parti");
+                            hit.collider.gameObject.GetComponent<myInfo>().binaryParti = true;
+                        }
+                        else {
+                            hit.collider.gameObject.GetComponent<myInfo>().binaryParti = false;
+                        }
                     }
                 }
             }
@@ -311,6 +309,10 @@ public class PlayerControlStickyGaze : MonoBehaviour {
         else {
             //didnt catch anything on ray
             turnOffAllLabels();
+            for (int i = 0; i < MyObjects.Count; i++) {
+                Debug.Log("NOT LOOKING: turning off labels...");
+                MyObjects[i].GetComponent<myInfo>().binaryParti = false;
+            }
         }
     }
 

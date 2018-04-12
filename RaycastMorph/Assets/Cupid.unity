@@ -1122,6 +1122,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!65 &74308769
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1228,7 +1229,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -1276,7 +1277,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 402791641
+  randomSeed: 563308992
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6288,6 +6289,7 @@ MonoBehaviour:
   kakarot: {fileID: 229336182}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!65 &229336176
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6437,7 +6439,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -6485,7 +6487,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 49454133
+  randomSeed: -1535572588
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -10503,6 +10505,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!65 &354144343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10652,7 +10655,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -10700,7 +10703,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1345139375
+  randomSeed: -1762379952
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -14619,6 +14622,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!95 &404601838
 Animator:
   serializedVersion: 3
@@ -14717,7 +14721,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -14765,7 +14769,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1345139375
+  randomSeed: -1772582761
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -19235,6 +19239,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!23 &505378273
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19559,6 +19564,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!199 &517630631
 ParticleSystemRenderer:
   serializedVersion: 4
@@ -19673,7 +19679,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1645837177
+  randomSeed: -1228946693
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -23305,9 +23311,10 @@ MonoBehaviour:
   tagReveal: 
   startPos: {x: 0, y: 0, z: 0}
   startRot: {x: 0, y: 0, z: 0, w: 0}
-  kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
+  kakarot: {fileID: 568378750}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!54 &568378745
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23492,7 +23499,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1645837177
+  randomSeed: 95193927
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -27299,6 +27306,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!23 &602308928
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27788,6 +27796,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!23 &640051869
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28352,9 +28361,10 @@ MonoBehaviour:
   tagReveal: 
   startPos: {x: 0, y: 0, z: 0}
   startRot: {x: 0, y: 0, z: 0, w: 0}
-  kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
+  kakarot: {fileID: 688720475}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!199 &688720474
 ParticleSystemRenderer:
   serializedVersion: 4
@@ -37017,6 +37027,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!23 &816202698
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37227,6 +37238,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!23 &836696077
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37408,6 +37420,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!65 &863500201
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37559,7 +37572,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -37607,7 +37620,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1345139375
+  randomSeed: -317445956
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -41384,6 +41397,7 @@ MonoBehaviour:
   kakarot: {fileID: 0}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!1 &892206014
 GameObject:
   m_ObjectHideFlags: 0
@@ -41639,6 +41653,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!65 &926091675
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41790,7 +41805,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -41838,7 +41853,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1970600924
+  randomSeed: 582839528
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -45317,6 +45332,7 @@ MonoBehaviour:
   kakarot: {fileID: 0}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!82 &944280430
 AudioSource:
   m_ObjectHideFlags: 0
@@ -47796,6 +47812,7 @@ MonoBehaviour:
   kakarot: {fileID: 0}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!82 &1168458851
 AudioSource:
   m_ObjectHideFlags: 0
@@ -48783,6 +48800,7 @@ MonoBehaviour:
   kakarot: {fileID: 0}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!82 &1229420800
 AudioSource:
   m_ObjectHideFlags: 0
@@ -48942,7 +48960,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -48990,7 +49008,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1702538635
+  randomSeed: 1784535646
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -54409,6 +54427,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!65 &1389716823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54869,6 +54888,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!23 &1418386029
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55268,6 +55288,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!23 &1445991242
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55666,6 +55687,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!65 &1475719610
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55817,7 +55839,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -55865,7 +55887,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1970050170
+  randomSeed: -633009493
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -59528,6 +59550,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!65 &1512094513
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59621,7 +59644,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -59669,7 +59692,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1345139375
+  randomSeed: 1598778520
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -63100,6 +63123,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!65 &1525418458
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63251,7 +63275,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -63299,7 +63323,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1345139375
+  randomSeed: -616513019
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -69416,6 +69440,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!199 &1803380195
 ParticleSystemRenderer:
   serializedVersion: 4
@@ -69482,7 +69507,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -69530,7 +69555,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1824737786
+  randomSeed: 698522516
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -73449,7 +73474,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -73497,7 +73522,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1345139375
+  randomSeed: 2079109639
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -78790,6 +78815,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!199 &2008548247
 ParticleSystemRenderer:
   serializedVersion: 4
@@ -78856,7 +78882,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -78904,7 +78930,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -606552331
+  randomSeed: 2143764046
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -82249,6 +82275,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!65 &2015695078
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -82398,7 +82425,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -82446,7 +82473,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1345139375
+  randomSeed: -1572172967
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -86656,6 +86683,7 @@ MonoBehaviour:
   kakarot: {fileID: 198584988496597690, guid: ed2ab35eb5b5fc141b7cebd4cddcc49f, type: 2}
   presentParti: {fileID: 0}
   partiStart: 0
+  binaryParti: 0
 --- !u!23 &2078128499
 MeshRenderer:
   m_ObjectHideFlags: 0
