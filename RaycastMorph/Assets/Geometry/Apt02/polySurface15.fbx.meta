@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0fb0593ad9ee4944fa18d6f21e7b3d9a
-timeCreated: 1522179002
+guid: b2362b1a99aa251469b32d681ab9f1fa
+timeCreated: 1523508586
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -17,7 +17,11 @@ ModelImporter:
     400006: polySurface15
     400008: //RootNode
     400010: polySurface9
-    2100000: lambert1
+    2100000: Concrete
+    2100002: Wood
+    2100004: Mat05
+    2100006: WhiteWall
+    2100008: Mat04
     2300000: polySurface15
     3300000: polySurface15
     4300000: polySurface15

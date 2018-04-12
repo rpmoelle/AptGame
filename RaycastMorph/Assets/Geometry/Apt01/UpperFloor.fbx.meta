@@ -1,14 +1,15 @@
 fileFormatVersion: 2
-guid: f7f5318088d1682478b3842f9ee7866f
-timeCreated: 1522029262
+guid: d76b99da53ef11449ba40e1daa63b8ab
+timeCreated: 1523489809
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Metal03
-    2100002: Concrete
+    2100000: Gold
+    2100002: Mat02
+    2100004: Mat04
     2300000: //RootNode
     3300000: //RootNode
     4300000: UpperFloor

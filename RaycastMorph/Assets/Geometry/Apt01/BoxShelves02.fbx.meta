@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: dbdf822412bf80940a618aaa4849b1ce
-timeCreated: 1522120281
+guid: e905a466883b23b4eabdf26f943543c4
+timeCreated: 1523489811
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -11,7 +11,10 @@ ModelImporter:
     400000: 4UNITY
     400002: BoxShelves02
     400004: //RootNode
-    2100000: lambert1
+    2100000: Mat02
+    2100002: Mat01
+    2100004: Mat03
+    2100006: lambert1
     2300000: BoxShelves02
     3300000: BoxShelves02
     4300000: BoxShelves02

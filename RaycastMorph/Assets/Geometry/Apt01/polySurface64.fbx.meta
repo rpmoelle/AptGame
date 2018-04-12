@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 71bd10576a8c97d4ba2dad737eb9bb8b
-timeCreated: 1522120276
+guid: 382f335034fd11140af2769a664ecf08
+timeCreated: 1523489797
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,6 +10,7 @@ ModelImporter:
     400000: polySurface64
     400002: //RootNode
     2100000: lambert1
+    2100002: Mat05
     2300000: polySurface64
     3300000: polySurface64
     4300000: polySurface64

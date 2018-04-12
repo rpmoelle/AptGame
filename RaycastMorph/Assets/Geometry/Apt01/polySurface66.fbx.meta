@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 618985fbbba4cd04d8873aaf0fd6cd1b
-timeCreated: 1522120276
+guid: 851f6d12cd126384bafb182516beafec
+timeCreated: 1523489801
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -12,7 +12,7 @@ ModelImporter:
     400002: polySurface66
     400004: //RootNode
     2100000: Glass
-    2100002: Metal01
+    2100002: Mat01
     2300000: polySurface66
     3300000: polySurface66
     4300000: polySurface66

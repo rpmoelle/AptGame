@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 25bbf520bb2483242af49cf409e46ba8
-timeCreated: 1522179003
+guid: aef10ee1e7b43fd42ab6af7dd5cc3479
+timeCreated: 1523508584
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -8,6 +8,7 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: lambert1
+    2100002: Wood
     2300000: //RootNode
     3300000: //RootNode
     4300000: Floor1

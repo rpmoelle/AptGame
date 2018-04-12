@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 1a2479047ad77c749941380408a7922e
-timeCreated: 1522249386
+guid: b0f2817b50acb7a48822a190bc22b5d6
+timeCreated: 1523508586
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert1
+    2100000: Mat06
     2300000: //RootNode
     3300000: //RootNode
     4300000: CowHide
