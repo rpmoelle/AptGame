@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45101327, g: 0.50086063, b: 0.5742883, a: 1}
+  m_IndirectSpecularColor: {r: 0.4510134, g: 0.5008608, b: 0.5742888, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -414,8 +414,8 @@ GameObject:
   - component: {fileID: 41789931}
   - component: {fileID: 41789932}
   - component: {fileID: 41789933}
-  - component: {fileID: 41789934}
   - component: {fileID: 41789936}
+  - component: {fileID: 41789935}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -635,18 +635,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!65 &41789934
+--- !u!65 &41789935
 BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 41789925}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 1.5906048}
+  m_Center: {x: 0, y: 0, z: 0.2953024}
 --- !u!114 &41789936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26805,9 +26805,10 @@ GameObject:
   - component: {fileID: 572543473}
   - component: {fileID: 572543472}
   - component: {fileID: 572543478}
-  - component: {fileID: 572543476}
   - component: {fileID: 572543479}
   - component: {fileID: 572543480}
+  - component: {fileID: 572543477}
+  - component: {fileID: 572543476}
   m_Layer: 0
   m_Name: Player Body
   m_TagString: Untagged
@@ -26856,7 +26857,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 572543471}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.25
   m_Height: 2
@@ -26883,8 +26884,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
---- !u!65 &572543476
-BoxCollider:
+--- !u!54 &572543476
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 572543471}
+  serializedVersion: 2
+  m_Mass: 1000000
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!136 &572543477
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -26892,9 +26908,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.6, z: 1}
-  m_Center: {x: 0, y: 0.25, z: 0}
+  m_Radius: 0.9496765
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0.1040678}
 --- !u!114 &572543478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28353,7 +28370,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: eb6aaa51cf1aaae42bd7ac999c4da2d2, type: 2}
+  - {fileID: 2100000, guid: 9d0fc16d2a0cc684fa8a8ed16e4a9315, type: 2}
   - {fileID: 2100000, guid: eb6aaa51cf1aaae42bd7ac999c4da2d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -28452,7 +28469,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 204929803
+  randomSeed: -1420757654
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -32512,7 +32529,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1691985273
+  randomSeed: -157859505
   InitialModule:
     serializedVersion: 3
     enabled: 1
