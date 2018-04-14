@@ -38,7 +38,15 @@ public class PlayerControlStickyGaze : MonoBehaviour {
     public Text task;
     public string currentRequestor;
 
-    public GameObject door1;
+    public GameObject door1;//APT2
+    public Vector3 door1OpenRotation;
+    public Vector3 door1OpenPosition;
+    public GameObject door2;//APT3
+    public Vector3 door2OpenRotation;
+    public Vector3 door2OpenPosition;
+    public GameObject door3;//Theatre
+    public Vector3 door3OpenRotation;
+    public Vector3 door3OpenPosition;
 
     //Analytics Tools - ignore these, they are measuring data for us
     //Specifically I am measuring how much time it takes for players to reach the correct combinations
