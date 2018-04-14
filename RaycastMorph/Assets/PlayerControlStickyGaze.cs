@@ -21,6 +21,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
     public Text evil;
     public Text good;
     public Text taskDisplay;
+    public Text requestorText;
     GameObject greenCube;
     public GameObject TEMPNEWOBJ;
     public ParticleSystem presentGet;
@@ -28,6 +29,10 @@ public class PlayerControlStickyGaze : MonoBehaviour {
     List<GameObject> MyObjects = new List<GameObject>();
     myInfo objectInfo; //info on the object from MyObjects[0]
 
+    public bool lookedAtSomethingElse = false;
+
+    public ParticleSystem reticlePS;
+    public Animator reticleAnim;
     public Text WorldLabel;
     public bool inSallysRoom;
     public Text task;
@@ -104,31 +109,43 @@ public class PlayerControlStickyGaze : MonoBehaviour {
             case 1:
                 {
                     currentRequestor = "Sally";
+
+                    requestorText.text = currentRequestor.ToString();
                     break;
                 }
             case 2:
                 {
                     currentRequestor = "Bob";
+
+                    requestorText.text = currentRequestor.ToString();
                     break;
                 }
             case 3:
                 {
                     currentRequestor = "Jill";
+
+                    requestorText.text = currentRequestor.ToString();
                     break;
                 }
             case 4:
                 {
                     currentRequestor = "Sally";
+
+                    requestorText.text = currentRequestor.ToString();
                     break;
                 }
             case 5:
                 {
                     currentRequestor = "Jill";
+
+                    requestorText.text = currentRequestor.ToString();
                     break;
                 }
             case 6:
                 {
                     currentRequestor = "Bob";
+
+                    requestorText.text = currentRequestor.ToString();
                     break;
                 }
         }
@@ -139,32 +156,34 @@ public class PlayerControlStickyGaze : MonoBehaviour {
         {
             case 1:
                 {
-                    return "REQUEST: Sally - My honey, the executive, is coming over. Bring me something DIRTY to get me in the mood, but also CLEAN to keep it classy.";
+                    return "REQUEST: My honey, the executive, is coming over. Bring me something DIRTY to get me in the mood, but also CLEAN to keep it classy.";
                     break;
                 }
             case 2:
                 {
-                    return "REQUEST: Bob - About to live tweet the fireworks show! Make me something TASTY and EXPLOSIVE to eat during the show and I'll unlock the theatre for you!";
+                    return "REQUEST: I need something provocative in my photography portfolio. Make me something SHOCKING and EVIL to photograph.";
                     break;
                 }
             case 3:
                 {
-                    return "REQUEST: Jill - My novel is so cliche! Bring me some HOT and RISKY inspiration!";
+                    return "REQUEST:  My novel is so cliche! Bring me some HOT and RISKY inspiration!";
                     break;
                 }
             case 4:
                 {
-                    return "REQUEST: Sally - I need something provocative in my photography portfolio. Make me something SHOCKING and EVIL to photograph.";
+                    
+                    return "REQUEST: My pH is off balance. Bring me something BASIC and ACIDIC to balance it out.";
                     break;
                 }
             case 5:
                 {
-                    return "REQUEST: Jill - My pH is off balance. Bring me something BASIC and ACIDIC to balance it out.";
+                    return "REQUEST: About to live tweet the fireworks show! Make me something TASTY and EXPLOSIVE to eat during the show and I'll unlock the theatre for you!";
+              
                     break;
                 }
             case 6:
                 {
-                    return "REQUEST: Bob - I’m dying of disco fever! Make me something FUNKY and MEDICINAL to cure me!";
+                    return "REQUEST: I’m dying of disco fever! Make me something FUNKY and MEDICINAL to cure me!";
                     break;
                 }
         }
@@ -285,6 +304,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
             else if (hit.collider != null && hit.collider != floor && hit.collider.gameObject != cam) {
                 //display the label
                 //showLabel();
+               
                 if (Input.GetKeyDown(KeyCode.Mouse0)) {
                     //click to release
                     if (hit.collider.tag == "combined") {
@@ -295,6 +315,15 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                     hit.collider.gameObject.GetComponent<myInfo>().watched = true;
                     if (hit.collider.gameObject.GetComponent<myInfo>().label != null) {
                         WorldLabel.enabled = true;
+                        //play the little animation
+                        if (!lookedAtSomethingElse)
+                        {
+                            Debug.Log("IM SEEING A THING");
+                            reticleAnim.SetTrigger("looking");
+                            reticlePS.Play();
+                            lookedAtSomethingElse = true;
+                        }
+                       
                         //if (hit.collider.gameObject.GetComponent<myInfo>().wrongCombine) {
                         //    WorldLabel.enabled = true;
                         //}
@@ -317,6 +346,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
         }
         else {
             //didnt catch anything on ray
+            lookedAtSomethingElse = false;
             turnOffAllLabels();
             for (int i = 0; i < MyObjects.Count; i++) {
                 Debug.Log("NOT LOOKING: turning off labels...");
@@ -408,18 +438,21 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         break;
                     }
                 case 2: {
-                        Debug.Log("ENTERING CASE 2");
-                        //find tasty and explosive
-                        if (checkMatchingTags("tasty", "explosive")) {
+                        //find shocking and evil
+                        if (checkMatchingTags("shocking", "evil"))
+                        {
                             //success
                             Debug.Log("YOU COMBINED CORRECTLY");
-                            Tinylytics.AnalyticsManager.LogCustomMetric("Puzzle 2 Solve Time (sec)", (puzzle1Timer / 60).ToString());
-                            Tinylytics.AnalyticsManager.LogCustomMetric("Wrong Combination Attempts To Puzzle 2", numWrongCombos.ToString());
+                            Tinylytics.AnalyticsManager.LogCustomMetric("Puzzle 4 Solve Time (sec)", (puzzle1Timer / 60).ToString());
+                            Tinylytics.AnalyticsManager.LogCustomMetric("Wrong Combination Attempts To Puzzle 4", numWrongCombos.ToString());
                             numWrongCombos = 0;
                             puzzle1Timer = 0;
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;
-                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);    //move this to infront of camera
+                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
+                            temp.GetComponent<myInfo>().label = "Glowing Scythe";
+                            temp.name = "GlowingScythe";
+                            temp.GetComponent<myInfo>().sallyObject = true;
 
                             //particles
                             presentGet.transform.position = temp.transform.position;
@@ -427,17 +460,10 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             presentGet.Play();
                             temp.GetComponent<myInfo>().partiStart = true;
 
-                            temp.GetComponent<myInfo>().label = "Popcorn";
-                            temp.name = "Popcorn";
-                            temp.GetComponent<myInfo>().sallyObject = false;
-
-                            //open the door
-                            
-
                             detachItems();
                             cleanCam();
                             temp.GetComponent<Rigidbody>().useGravity = true;
-                            //temp.GetComponent<Rigidbody>().isKinematic = false;
+                            // temp.GetComponent<Rigidbody>().isKinematic = false;
                             temp.GetComponent<Rigidbody>().freezeRotation = true;
                             temp.GetComponent<Rigidbody>().angularDrag = 0f;
                             temp.GetComponent<Rigidbody>().mass = 1f;
@@ -448,10 +474,12 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             TextMeshProUGUI tmpro = temp.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();//sorry this is because it defaults the text like three children down :(
                             tmpro.SetText(temp.name);
                         }
-                        else {
+                        else
+                        {
                             Debug.Log("COMBO DIDN'T WORK");
                             numWrongCombos++;
-                            if (objectInfo.wrongCombine == false) {
+                            if (objectInfo.wrongCombine == false)
+                            {
                                 objectInfo.wrongCombine = true;
                                 objectInfo.label += " (" + objectInfo.tag + ")";
                             }
@@ -459,6 +487,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         }
 
                         break;
+                      
                     }
                 case 3: {
                         //find comedic and dramatic
@@ -511,58 +540,6 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                 case 4:
                     {
                         //find comedic and dramatic
-                        if (checkMatchingTags("shocking", "evil"))
-                        {
-                            //success
-                            Debug.Log("YOU COMBINED CORRECTLY");
-                            Tinylytics.AnalyticsManager.LogCustomMetric("Puzzle 4 Solve Time (sec)", (puzzle1Timer / 60).ToString());
-                            Tinylytics.AnalyticsManager.LogCustomMetric("Wrong Combination Attempts To Puzzle 4", numWrongCombos.ToString());
-                            numWrongCombos = 0;
-                            puzzle1Timer = 0;
-                            //Remove old objects for new one
-                            Vector3 pos = MyObjects[0].transform.position;
-                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
-                            temp.GetComponent<myInfo>().label = "Glowing Scythe";
-                            temp.name = "GlowingScythe";
-                            temp.GetComponent<myInfo>().sallyObject = true;
-
-                            //particles
-                            presentGet.transform.position = temp.transform.position;
-                            presentGet.transform.parent = this.gameObject.transform;
-                            presentGet.Play();
-                            temp.GetComponent<myInfo>().partiStart = true;
-
-                            detachItems();
-                            cleanCam();
-                            temp.GetComponent<Rigidbody>().useGravity = true;
-                            // temp.GetComponent<Rigidbody>().isKinematic = false;
-                            temp.GetComponent<Rigidbody>().freezeRotation = true;
-                            temp.GetComponent<Rigidbody>().angularDrag = 0f;
-                            temp.GetComponent<Rigidbody>().mass = 1f;
-
-                            //Show the item's label on the present's tag
-                            Debug.Log(temp.transform.GetChild(0).name);
-                            Debug.Log(temp.transform.GetChild(0).transform.GetChild(0).name);
-                            TextMeshProUGUI tmpro = temp.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();//sorry this is because it defaults the text like three children down :(
-                            tmpro.SetText(temp.name);
-                        }
-                        else
-                        {
-                            Debug.Log("COMBO DIDN'T WORK");
-                            numWrongCombos++;
-                            if (objectInfo.wrongCombine == false)
-                            {
-                                objectInfo.wrongCombine = true;
-                                objectInfo.label += " (" + objectInfo.tag + ")";
-                            }
-                            this.gameObject.GetComponent<AudioSource>().Play();
-                        }
-
-                        break;
-                    }
-                case 5:
-                    {
-                        //find comedic and dramatic
                         if (checkMatchingTags("basic", "acidic"))
                         {
                             //success
@@ -612,6 +589,64 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         }
 
                         break;
+                    }
+                case 5:
+                    {
+                        Debug.Log("ENTERING CASE 2");
+                        //find tasty and explosive
+                        if (checkMatchingTags("tasty", "explosive"))
+                        {
+                            //success
+                            Debug.Log("YOU COMBINED CORRECTLY");
+                            Tinylytics.AnalyticsManager.LogCustomMetric("Puzzle 2 Solve Time (sec)", (puzzle1Timer / 60).ToString());
+                            Tinylytics.AnalyticsManager.LogCustomMetric("Wrong Combination Attempts To Puzzle 2", numWrongCombos.ToString());
+                            numWrongCombos = 0;
+                            puzzle1Timer = 0;
+                            //Remove old objects for new one
+                            Vector3 pos = MyObjects[0].transform.position;
+                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);    //move this to infront of camera
+
+                            //particles
+                            presentGet.transform.position = temp.transform.position;
+                            presentGet.transform.parent = this.gameObject.transform;
+                            presentGet.Play();
+                            temp.GetComponent<myInfo>().partiStart = true;
+
+                            temp.GetComponent<myInfo>().label = "Popcorn";
+                            temp.name = "Popcorn";
+                            temp.GetComponent<myInfo>().sallyObject = false;
+
+                            //open the door
+
+
+                            detachItems();
+                            cleanCam();
+                            temp.GetComponent<Rigidbody>().useGravity = true;
+                            //temp.GetComponent<Rigidbody>().isKinematic = false;
+                            temp.GetComponent<Rigidbody>().freezeRotation = true;
+                            temp.GetComponent<Rigidbody>().angularDrag = 0f;
+                            temp.GetComponent<Rigidbody>().mass = 1f;
+
+                            //Show the item's label on the present's tag
+                            Debug.Log(temp.transform.GetChild(0).name);
+                            Debug.Log(temp.transform.GetChild(0).transform.GetChild(0).name);
+                            TextMeshProUGUI tmpro = temp.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();//sorry this is because it defaults the text like three children down :(
+                            tmpro.SetText(temp.name);
+                        }
+                        else
+                        {
+                            Debug.Log("COMBO DIDN'T WORK");
+                            numWrongCombos++;
+                            if (objectInfo.wrongCombine == false)
+                            {
+                                objectInfo.wrongCombine = true;
+                                objectInfo.label += " (" + objectInfo.tag + ")";
+                            }
+                            this.gameObject.GetComponent<AudioSource>().Play();
+                        }
+
+                        break;
+                       
                     }
                 case 6:
                     {
