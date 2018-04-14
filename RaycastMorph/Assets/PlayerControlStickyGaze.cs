@@ -35,6 +35,12 @@ public class PlayerControlStickyGaze : MonoBehaviour {
 
     public GameObject door1;
 
+    //Analytics Tools - ignore these, they are measuring data for us
+    //Specifically I am measuring how much time it takes for players to reach the correct combinations
+    public int puzzle1Timer = 0;
+    //And how many false combination attempts there are between puzzles
+    public int numWrongCombos = 0;
+
     List<myInfo> AllObjsWithInfo = new List<myInfo>();  //reference list of all the "MyInfo" scripts in the scene
 
     //Public Tasks
@@ -65,6 +71,9 @@ public class PlayerControlStickyGaze : MonoBehaviour {
         LaunchStuff();  //push r to launch stuff in the direction of the camera
         Detach();       //push space to release stuff
         Combine();      //check combining objects
+
+        //Analytics
+        puzzle1Timer++;
 
         if (presentGet.isEmitting) {
             StartCoroutine("stopParti");
@@ -354,7 +363,10 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         if (checkMatchingTags("clean", "dirty")) {
                             //success
                             Debug.Log("YOU COMBINED CORRECTLY");
-
+                            Tinylytics.AnalyticsManager.LogCustomMetric("Puzzle 1 Solve Time (sec)", (puzzle1Timer / 60).ToString());
+                            Tinylytics.AnalyticsManager.LogCustomMetric("Wrong Combination Attempts To Puzzle 1", numWrongCombos.ToString());
+                            numWrongCombos = 0;
+                            puzzle1Timer = 0;
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;//standardize this to be a uniform location infront of camera
                             GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
@@ -385,6 +397,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         }
                         else {
                             Debug.Log("COMBO DIDN'T WORK");
+                            numWrongCombos++;
                             if (objectInfo.wrongCombine == false) {
                                 objectInfo.wrongCombine = true;
                                 objectInfo.label += " (" + objectInfo.tag + ")";
@@ -400,7 +413,10 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         if (checkMatchingTags("tasty", "explosive")) {
                             //success
                             Debug.Log("YOU COMBINED CORRECTLY");
-
+                            Tinylytics.AnalyticsManager.LogCustomMetric("Puzzle 2 Solve Time (sec)", (puzzle1Timer / 60).ToString());
+                            Tinylytics.AnalyticsManager.LogCustomMetric("Wrong Combination Attempts To Puzzle 2", numWrongCombos.ToString());
+                            numWrongCombos = 0;
+                            puzzle1Timer = 0;
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;
                             GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);    //move this to infront of camera
@@ -434,6 +450,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         }
                         else {
                             Debug.Log("COMBO DIDN'T WORK");
+                            numWrongCombos++;
                             if (objectInfo.wrongCombine == false) {
                                 objectInfo.wrongCombine = true;
                                 objectInfo.label += " (" + objectInfo.tag + ")";
@@ -448,7 +465,10 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         if (checkMatchingTags("hot", "risky")) {
                             //success
                             Debug.Log("YOU COMBINED CORRECTLY");
-
+                            Tinylytics.AnalyticsManager.LogCustomMetric("Puzzle 3 Solve Time (sec)", (puzzle1Timer / 60).ToString());
+                            Tinylytics.AnalyticsManager.LogCustomMetric("Wrong Combination Attempts To Puzzle 3", numWrongCombos.ToString());
+                            numWrongCombos = 0;
+                            puzzle1Timer = 0;
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;
                             GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
@@ -478,6 +498,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         }
                         else {
                             Debug.Log("COMBO DIDN'T WORK");
+                            numWrongCombos++;
                             if (objectInfo.wrongCombine == false) {
                                 objectInfo.wrongCombine = true;
                                 objectInfo.label += " (" + objectInfo.tag + ")";
@@ -494,7 +515,10 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         {
                             //success
                             Debug.Log("YOU COMBINED CORRECTLY");
-
+                            Tinylytics.AnalyticsManager.LogCustomMetric("Puzzle 4 Solve Time (sec)", (puzzle1Timer / 60).ToString());
+                            Tinylytics.AnalyticsManager.LogCustomMetric("Wrong Combination Attempts To Puzzle 4", numWrongCombos.ToString());
+                            numWrongCombos = 0;
+                            puzzle1Timer = 0;
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;
                             GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
@@ -525,6 +549,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         else
                         {
                             Debug.Log("COMBO DIDN'T WORK");
+                            numWrongCombos++;
                             if (objectInfo.wrongCombine == false)
                             {
                                 objectInfo.wrongCombine = true;
@@ -542,7 +567,10 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         {
                             //success
                             Debug.Log("YOU COMBINED CORRECTLY");
-
+                            Tinylytics.AnalyticsManager.LogCustomMetric("Puzzle 5 Solve Time (sec)", (puzzle1Timer / 60).ToString());
+                            Tinylytics.AnalyticsManager.LogCustomMetric("Wrong Combination Attempts To Puzzle 5", numWrongCombos.ToString());
+                            numWrongCombos = 0;
+                            puzzle1Timer = 0;
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;
                             GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
@@ -573,6 +601,8 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         else
                         {
                             Debug.Log("COMBO DIDN'T WORK");
+                            numWrongCombos++;
+                            puzzle1Timer = 0;
                             if (objectInfo.wrongCombine == false)
                             {
                                 objectInfo.wrongCombine = true;
@@ -590,7 +620,10 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         {
                             //success
                             Debug.Log("YOU COMBINED CORRECTLY");
-
+                            Tinylytics.AnalyticsManager.LogCustomMetric("Puzzle 6 Solve Time (sec)", (puzzle1Timer / 60).ToString());
+                            Tinylytics.AnalyticsManager.LogCustomMetric("Wrong Combination Attempts To Puzzle 6", numWrongCombos.ToString());
+                            numWrongCombos = 0;
+                            puzzle1Timer = 0;
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;
                             GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
@@ -621,6 +654,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                         else
                         {
                             Debug.Log("COMBO DIDN'T WORK");
+                            numWrongCombos++;
                             if (objectInfo.wrongCombine == false)
                             {
                                 objectInfo.wrongCombine = true;
