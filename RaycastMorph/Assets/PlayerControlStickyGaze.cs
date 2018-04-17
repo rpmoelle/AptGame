@@ -25,6 +25,9 @@ public class PlayerControlStickyGaze : MonoBehaviour {
     GameObject greenCube;
     public GameObject TEMPNEWOBJ;
     public ParticleSystem presentGet;
+    public ParticleSystem presentGet2;
+    public ParticleSystem presentGet3;
+    public ParticleSystem presentGet4;
 
     List<GameObject> MyObjects = new List<GameObject>();
     myInfo objectInfo; //info on the object from MyObjects[0]
@@ -416,7 +419,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             puzzle1Timer = 0;
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;//standardize this to be a uniform location infront of camera
-                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
+                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 1.5f), transform.rotation);//move this to infront of camera
                             temp.GetComponent<myInfo>().label = "Slimy Cucumber";
                             temp.name = "SlimyCucumber";
                             temp.GetComponent<myInfo>().sallyObject = true;
@@ -425,6 +428,15 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             presentGet.transform.position = temp.transform.position;
                             presentGet.transform.parent = this.gameObject.transform;
                             presentGet.Play();
+                            presentGet2.transform.position = temp.transform.position;
+                            presentGet2.transform.parent = this.gameObject.transform;
+                            presentGet2.Play();
+                            presentGet3.transform.position = temp.transform.position;
+                            presentGet3.transform.parent = this.gameObject.transform;
+                            presentGet3.Play();
+                            presentGet4.transform.position = temp.transform.position;
+                            presentGet4.transform.parent = this.gameObject.transform;
+                            presentGet4.Play();
                             temp.GetComponent<myInfo>().partiStart = true;
 
                             detachItems();
@@ -466,7 +478,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             puzzle1Timer = 0;
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;
-                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
+                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 1.5f), transform.rotation);//move this to infront of camera
                             temp.GetComponent<myInfo>().label = "Glowing Scythe";
                             temp.name = "GlowingScythe";
                             temp.GetComponent<myInfo>().sallyObject = true;
@@ -475,6 +487,15 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             presentGet.transform.position = temp.transform.position;
                             presentGet.transform.parent = this.gameObject.transform;
                             presentGet.Play();
+                            presentGet2.transform.position = temp.transform.position;
+                            presentGet2.transform.parent = this.gameObject.transform;
+                            presentGet2.Play();
+                            presentGet3.transform.position = temp.transform.position;
+                            presentGet3.transform.parent = this.gameObject.transform;
+                            presentGet3.Play();
+                            presentGet4.transform.position = temp.transform.position;
+                            presentGet4.transform.parent = this.gameObject.transform;
+                            presentGet4.Play();
                             temp.GetComponent<myInfo>().partiStart = true;
 
                             detachItems();
@@ -517,7 +538,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             puzzle1Timer = 0;
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;
-                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
+                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 1.5f), transform.rotation);//move this to infront of camera
                             temp.GetComponent<myInfo>().label = "Inevitable Spicy Poops";
                             temp.name = "SpicyPoops";
                             temp.GetComponent<myInfo>().sallyObject = true;
@@ -526,6 +547,15 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             presentGet.transform.position = temp.transform.position;
                             presentGet.transform.parent = this.gameObject.transform;
                             presentGet.Play();
+                            presentGet2.transform.position = temp.transform.position;
+                            presentGet2.transform.parent = this.gameObject.transform;
+                            presentGet2.Play();
+                            presentGet3.transform.position = temp.transform.position;
+                            presentGet3.transform.parent = this.gameObject.transform;
+                            presentGet3.Play();
+                            presentGet4.transform.position = temp.transform.position;
+                            presentGet4.transform.parent = this.gameObject.transform;
+                            presentGet4.Play();
                             temp.GetComponent<myInfo>().partiStart = true;
 
                             detachItems();
@@ -567,7 +597,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             puzzle1Timer = 0;
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;
-                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
+                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 1.5f), transform.rotation);//move this to infront of camera
                             temp.GetComponent<myInfo>().label = "Margarita";
                             temp.name = "Margarita";
                             temp.GetComponent<myInfo>().sallyObject = true;
@@ -576,6 +606,15 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             presentGet.transform.position = temp.transform.position;
                             presentGet.transform.parent = this.gameObject.transform;
                             presentGet.Play();
+                            presentGet2.transform.position = temp.transform.position;
+                            presentGet2.transform.parent = this.gameObject.transform;
+                            presentGet2.Play();
+                            presentGet3.transform.position = temp.transform.position;
+                            presentGet3.transform.parent = this.gameObject.transform;
+                            presentGet3.Play();
+                            presentGet4.transform.position = temp.transform.position;
+                            presentGet4.transform.parent = this.gameObject.transform;
+                            presentGet4.Play();
                             temp.GetComponent<myInfo>().partiStart = true;
 
                             detachItems();
@@ -621,12 +660,21 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             puzzle1Timer = 0;
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;
-                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);    //move this to infront of camera
+                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 1.5f), transform.rotation);    //move this to infront of camera
 
                             //particles
                             presentGet.transform.position = temp.transform.position;
                             presentGet.transform.parent = this.gameObject.transform;
                             presentGet.Play();
+                            presentGet2.transform.position = temp.transform.position;
+                            presentGet2.transform.parent = this.gameObject.transform;
+                            presentGet2.Play();
+                            presentGet3.transform.position = temp.transform.position;
+                            presentGet3.transform.parent = this.gameObject.transform;
+                            presentGet3.Play();
+                            presentGet4.transform.position = temp.transform.position;
+                            presentGet4.transform.parent = this.gameObject.transform;
+                            presentGet4.Play();
                             temp.GetComponent<myInfo>().partiStart = true;
 
                             temp.GetComponent<myInfo>().label = "Popcorn";
@@ -678,15 +726,24 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             puzzle1Timer = 0;
                             //Remove old objects for new one
                             Vector3 pos = MyObjects[0].transform.position;
-                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 2), transform.rotation);//move this to infront of camera
+                            GameObject temp = Instantiate(TEMPNEWOBJ, transform.position + (transform.forward * 1.5f), transform.rotation);//move this to infront of camera
                             temp.GetComponent<myInfo>().label = "Disco Ball Cheese Pills";
                             temp.name = "DiscoPills";
                             temp.GetComponent<myInfo>().sallyObject = true;
-
+                            
                             //particles
                             presentGet.transform.position = temp.transform.position;
                             presentGet.transform.parent = this.gameObject.transform;
                             presentGet.Play();
+                            presentGet2.transform.position = temp.transform.position;
+                            presentGet2.transform.parent = this.gameObject.transform;
+                            presentGet2.Play();
+                            presentGet3.transform.position = temp.transform.position;
+                            presentGet3.transform.parent = this.gameObject.transform;
+                            presentGet3.Play();
+                            presentGet4.transform.position = temp.transform.position;
+                            presentGet4.transform.parent = this.gameObject.transform;
+                            presentGet4.Play();
                             temp.GetComponent<myInfo>().partiStart = true;
 
                             detachItems();
@@ -724,6 +781,9 @@ public class PlayerControlStickyGaze : MonoBehaviour {
     IEnumerator stopParti() {
         yield return new WaitForSeconds(1f);
         presentGet.Stop();
+        presentGet2.Stop();
+        presentGet3.Stop();
+        presentGet4.Stop();
     }
 
 }
