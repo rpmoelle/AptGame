@@ -35,6 +35,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
 
     List<GameObject> MyObjects = new List<GameObject>();
     myInfo objectInfo; //info on the object from MyObjects[0]
+    myInfo secondObjectInfo;    //info on the second object in MyObjects
 
     public bool lookedAtSomethingElse = false;
 
@@ -417,6 +418,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Q)) {
 
             objectInfo = MyObjects[0].GetComponent<myInfo>();    //the label of the object we're referring to a lot here on out
+            secondObjectInfo = MyObjects[1].GetComponent<myInfo>();     //the second thing you picked up
 
             switch (taskNum) {
                 case 1: {
@@ -470,12 +472,19 @@ public class PlayerControlStickyGaze : MonoBehaviour {
 
                             //Debug.Log(MyObjects.Count);
                         }
+                        else if (objectInfo.tag == secondObjectInfo.tag) {
+                            Debug.Log("NICE TRY FINDING OUT THE TAGS THE EASY WAY N00B");
+                        }
                         else {
                             Debug.Log("COMBO DIDN'T WORK");
                             numWrongCombos++;
+                            Debug.Log(objectInfo.tag);
+                            Debug.Log(secondObjectInfo.tag);
                             if (objectInfo.wrongCombine == false) {
                                 objectInfo.wrongCombine = true;
+                                secondObjectInfo.wrongCombine = true;
                                 objectInfo.label += " (" + objectInfo.tag + ")";
+                                secondObjectInfo.label += " (" + secondObjectInfo.tag + ")";
                             }
                             this.gameObject.GetComponent<AudioSource>().Play();
                         }
@@ -528,14 +537,18 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             TextMeshProUGUI tmpro = temp.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();//sorry this is because it defaults the text like three children down :(
                             tmpro.SetText(temp.name);
                         }
+                        else if (objectInfo.tag == secondObjectInfo.tag) {
+                            Debug.Log("NICE TRY FINDING OUT THE TAGS THE EASY WAY N00B");
+                        }
                         else
                         {
                             Debug.Log("COMBO DIDN'T WORK");
                             numWrongCombos++;
-                            if (objectInfo.wrongCombine == false)
-                            {
+                            if (objectInfo.wrongCombine == false) {
                                 objectInfo.wrongCombine = true;
+                                secondObjectInfo.wrongCombine = true;
                                 objectInfo.label += " (" + objectInfo.tag + ")";
+                                secondObjectInfo.label += " (" + secondObjectInfo.tag + ")";
                             }
                             this.gameObject.GetComponent<AudioSource>().Play();
                         }
@@ -588,12 +601,17 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             TextMeshProUGUI tmpro = temp.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();//sorry this is because it defaults the text like three children down :(
                             tmpro.SetText(temp.name);
                         }
+                        else if (objectInfo.tag == secondObjectInfo.tag) {
+                            Debug.Log("NICE TRY FINDING OUT THE TAGS THE EASY WAY N00B");
+                        }
                         else {
                             Debug.Log("COMBO DIDN'T WORK");
                             numWrongCombos++;
                             if (objectInfo.wrongCombine == false) {
                                 objectInfo.wrongCombine = true;
+                                secondObjectInfo.wrongCombine = true;
                                 objectInfo.label += " (" + objectInfo.tag + ")";
+                                secondObjectInfo.label += " (" + secondObjectInfo.tag + ")";
                             }
                             this.gameObject.GetComponent<AudioSource>().Play();
                         }
@@ -648,15 +666,19 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             TextMeshProUGUI tmpro = temp.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();//sorry this is because it defaults the text like three children down :(
                             tmpro.SetText(temp.name);
                         }
+                        else if (objectInfo.tag == secondObjectInfo.tag) {
+                            Debug.Log("NICE TRY FINDING OUT THE TAGS THE EASY WAY N00B");
+                        }
                         else
                         {
                             Debug.Log("COMBO DIDN'T WORK");
                             numWrongCombos++;
                             puzzle1Timer = 0;
-                            if (objectInfo.wrongCombine == false)
-                            {
+                            if (objectInfo.wrongCombine == false) {
                                 objectInfo.wrongCombine = true;
+                                secondObjectInfo.wrongCombine = true;
                                 objectInfo.label += " (" + objectInfo.tag + ")";
+                                secondObjectInfo.label += " (" + secondObjectInfo.tag + ")";
                             }
                             this.gameObject.GetComponent<AudioSource>().Play();
                         }
@@ -715,14 +737,18 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             TextMeshProUGUI tmpro = temp.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();//sorry this is because it defaults the text like three children down :(
                             tmpro.SetText(temp.name);
                         }
+                        else if (objectInfo.tag == secondObjectInfo.tag) {
+                            Debug.Log("NICE TRY FINDING OUT THE TAGS THE EASY WAY N00B");
+                        }
                         else
                         {
                             Debug.Log("COMBO DIDN'T WORK");
                             numWrongCombos++;
-                            if (objectInfo.wrongCombine == false)
-                            {
+                            if (objectInfo.wrongCombine == false) {
                                 objectInfo.wrongCombine = true;
+                                secondObjectInfo.wrongCombine = true;
                                 objectInfo.label += " (" + objectInfo.tag + ")";
+                                secondObjectInfo.label += " (" + secondObjectInfo.tag + ")";
                             }
                             this.gameObject.GetComponent<AudioSource>().Play();
                         }
@@ -777,14 +803,18 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             TextMeshProUGUI tmpro = temp.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();//sorry this is because it defaults the text like three children down :(
                             tmpro.SetText(temp.name);
                         }
+                        else if (objectInfo.tag == secondObjectInfo.tag) {
+                            Debug.Log("NICE TRY FINDING OUT THE TAGS THE EASY WAY N00B");
+                        }
                         else
                         {
                             Debug.Log("COMBO DIDN'T WORK");
                             numWrongCombos++;
-                            if (objectInfo.wrongCombine == false)
-                            {
+                            if (objectInfo.wrongCombine == false) {
                                 objectInfo.wrongCombine = true;
+                                secondObjectInfo.wrongCombine = true;
                                 objectInfo.label += " (" + objectInfo.tag + ")";
+                                secondObjectInfo.label += " (" + secondObjectInfo.tag + ")";
                             }
                             this.gameObject.GetComponent<AudioSource>().Play();
                         }
