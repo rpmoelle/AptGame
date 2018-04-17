@@ -30,6 +30,7 @@ TagManager:
   - basic
   - funky
   - medicinal
+  - person
   layers:
   - Default
   - TransparentFX

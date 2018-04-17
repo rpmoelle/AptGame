@@ -297,17 +297,26 @@ public class PlayerControlStickyGaze : MonoBehaviour {
             //A collision occured between the ray and a thing
             if (hit.collider != null && hit.collider != floor && hit.collider.gameObject != cam && Input.GetKeyDown(KeyCode.LeftShift)) {
                 //pick it up
-                hit.collider.gameObject.GetComponent<Rigidbody>().useGravity = false;
-                hit.collider.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-                Debug.Log("HOLDING: parti turned off");
-                hit.collider.gameObject.GetComponent<myInfo>().binaryParti = false;    //turn off partis when you're holding the object
-                hit.collider.transform.parent = cam.transform;//was cam.transform
-                MyObjects.Add(hit.collider.gameObject);
-                if (hit.collider.GetComponent<myInfo>() != null) {
-                    hit.collider.GetComponent<myInfo>().grabbed = true;
-                    hit.collider.gameObject.GetComponent<myInfo>().binaryParti = false;
+                if (hit.collider.gameObject.tag == "person")
+                {
+                    //hahaha
                 }
-                //hit.collider.transform.GetComponent<Rigidbody>().velocity = cam.transform.GetComponent<Rigidbody>().velocity;
+                else
+                {
+
+                    hit.collider.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                    hit.collider.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                    Debug.Log("HOLDING: parti turned off");
+                    hit.collider.gameObject.GetComponent<myInfo>().binaryParti = false;    //turn off partis when you're holding the object
+                    hit.collider.transform.parent = cam.transform;//was cam.transform
+                    MyObjects.Add(hit.collider.gameObject);
+                    if (hit.collider.GetComponent<myInfo>() != null)
+                    {
+                        hit.collider.GetComponent<myInfo>().grabbed = true;
+                        hit.collider.gameObject.GetComponent<myInfo>().binaryParti = false;
+                    }
+                    //hit.collider.transform.GetComponent<Rigidbody>().velocity = cam.transform.GetComponent<Rigidbody>().velocity;
+                }
             }
             else if (hit.collider != null && hit.collider != floor && hit.collider.gameObject != cam) {
                 //display the label

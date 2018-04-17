@@ -36929,6 +36929,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bb7751f3e3747164f8ad43364bb9889b, type: 3}
+      propertyPath: m_TagString
+      value: person
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb7751f3e3747164f8ad43364bb9889b, type: 3}
   m_IsPrefabParent: 0
@@ -46200,6 +46204,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bb7751f3e3747164f8ad43364bb9889b, type: 3}
+      propertyPath: m_TagString
+      value: person
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb7751f3e3747164f8ad43364bb9889b, type: 3}
   m_IsPrefabParent: 0
@@ -50070,7 +50078,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1784535646
+  randomSeed: 515584261
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -69503,6 +69511,10 @@ Prefab:
     - target: {fileID: 100000, guid: bb7751f3e3747164f8ad43364bb9889b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bb7751f3e3747164f8ad43364bb9889b, type: 3}
+      propertyPath: m_TagString
+      value: person
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb7751f3e3747164f8ad43364bb9889b, type: 3}
