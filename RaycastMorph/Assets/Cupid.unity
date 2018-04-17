@@ -634,6 +634,8 @@ MonoBehaviour:
   presentGet2: {fileID: 0}
   presentGet3: {fileID: 0}
   presentGet4: {fileID: 0}
+  comboSuccess: {fileID: 0}
+  errorSound: {fileID: 0}
   lookedAtSomethingElse: 0
   reticlePS: {fileID: 1925859668}
   reticleAnim: {fileID: 1832434725}
@@ -6245,6 +6247,8 @@ MonoBehaviour:
   presentGet2: {fileID: 0}
   presentGet3: {fileID: 0}
   presentGet4: {fileID: 0}
+  comboSuccess: {fileID: 0}
+  errorSound: {fileID: 0}
   lookedAtSomethingElse: 0
   reticlePS: {fileID: 0}
   reticleAnim: {fileID: 0}
@@ -30920,7 +30924,7 @@ MonoBehaviour:
   testCollider: {fileID: 0}
   floor: {fileID: 0}
   player: {fileID: 572543471}
-  testAudio1: {fileID: 0}
+  testAudio1: {fileID: 572543479}
   testAudio2: {fileID: 0}
   testswap: {fileID: 0}
   evil: {fileID: 0}
@@ -30932,6 +30936,8 @@ MonoBehaviour:
   presentGet2: {fileID: 286999915}
   presentGet3: {fileID: 2133392667}
   presentGet4: {fileID: 925289184}
+  comboSuccess: {fileID: 8300000, guid: f5127888572df39459032223a5f4956b, type: 3}
+  errorSound: {fileID: 8300000, guid: 6a2b634350a149c45a75802f826d3934, type: 3}
   lookedAtSomethingElse: 0
   reticlePS: {fileID: 1925859668}
   reticleAnim: {fileID: 1832434725}

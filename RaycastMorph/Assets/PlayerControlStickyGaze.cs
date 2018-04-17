@@ -29,6 +29,10 @@ public class PlayerControlStickyGaze : MonoBehaviour {
     public ParticleSystem presentGet3;
     public ParticleSystem presentGet4;
 
+    //audio
+    public AudioClip comboSuccess;
+    public AudioClip errorSound;
+
     List<GameObject> MyObjects = new List<GameObject>();
     myInfo objectInfo; //info on the object from MyObjects[0]
 
@@ -90,6 +94,13 @@ public class PlayerControlStickyGaze : MonoBehaviour {
 
         //Analytics
         puzzle1Timer++;
+
+        //Rest the eroor sound this is TEMP
+        if(testAudio1.clip != errorSound && !testAudio1.isPlaying)
+        {
+            testAudio1.clip = errorSound;
+        }
+        
 
         if (presentGet.isEmitting) {
             StartCoroutine("stopParti");
@@ -424,18 +435,23 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             temp.name = "SlimyCucumber";
                             temp.GetComponent<myInfo>().sallyObject = true;
 
+                            //sound
+                            testAudio1.clip = comboSuccess;
+                            testAudio1.Play();
+                            //testAudio1.clip = errorSound; 
+
                             //particles
                             presentGet.transform.position = temp.transform.position;
-                            presentGet.transform.parent = this.gameObject.transform;
+                            //presentGet.transform.parent = this.gameObject.transform;
                             presentGet.Play();
                             presentGet2.transform.position = temp.transform.position;
-                            presentGet2.transform.parent = this.gameObject.transform;
+                           // presentGet2.transform.parent = this.gameObject.transform;
                             presentGet2.Play();
                             presentGet3.transform.position = temp.transform.position;
-                            presentGet3.transform.parent = this.gameObject.transform;
+                            //presentGet3.transform.parent = this.gameObject.transform;
                             presentGet3.Play();
                             presentGet4.transform.position = temp.transform.position;
-                            presentGet4.transform.parent = this.gameObject.transform;
+                           // presentGet4.transform.parent = this.gameObject.transform;
                             presentGet4.Play();
                             temp.GetComponent<myInfo>().partiStart = true;
 
@@ -602,6 +618,7 @@ public class PlayerControlStickyGaze : MonoBehaviour {
                             temp.name = "Margarita";
                             temp.GetComponent<myInfo>().sallyObject = true;
 
+                            
                             //particles
                             presentGet.transform.position = temp.transform.position;
                             presentGet.transform.parent = this.gameObject.transform;
