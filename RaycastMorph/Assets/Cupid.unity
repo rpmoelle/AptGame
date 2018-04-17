@@ -577,7 +577,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 41789925}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.256, z: 0}
+  m_LocalPosition: {x: 0, y: 0.25600004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 210246794}
@@ -625,25 +625,25 @@ MonoBehaviour:
   evil: {fileID: 0}
   good: {fileID: 0}
   taskDisplay: {fileID: 730179171}
-  requestorText: {fileID: 0}
+  requestorText: {fileID: 988452811}
   TEMPNEWOBJ: {fileID: 1881435906518942, guid: 15b578bd01505fb4fb04b0d42f13edbd, type: 2}
-  presentGet: {fileID: 0}
+  presentGet: {fileID: 751727668}
   lookedAtSomethingElse: 0
-  reticlePS: {fileID: 0}
-  reticleAnim: {fileID: 0}
+  reticlePS: {fileID: 1925859668}
+  reticleAnim: {fileID: 1832434725}
   WorldLabel: {fileID: 384355104}
   inSallysRoom: 0
   task: {fileID: 0}
   currentRequestor: 
-  door1: {fileID: 0}
+  door1: {fileID: 1013166011}
   door1OpenRotation: {x: 0, y: 0, z: 0}
-  door1OpenPosition: {x: 0, y: 0, z: 0}
-  door2: {fileID: 0}
-  door2OpenRotation: {x: 0, y: 0, z: 0}
+  door1OpenPosition: {x: 25.4, y: -0.01, z: -8.81}
+  door2: {fileID: 1581153451}
+  door2OpenRotation: {x: 0, y: 90, z: 0}
   door2OpenPosition: {x: 0, y: 0, z: 0}
-  door3: {fileID: 0}
-  door3OpenRotation: {x: 0, y: 0, z: 0}
-  door3OpenPosition: {x: 0, y: 0, z: 0}
+  door3: {fileID: 1441186659}
+  door3OpenRotation: {x: 0, y: 90, z: 0}
+  door3OpenPosition: {x: 27, y: 1.5, z: -14.3}
   puzzle1Timer: 0
   numWrongCombos: 0
 --- !u!114 &41789932
@@ -27397,7 +27397,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 572543471}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.25
   m_Height: 2
   m_Direction: 1
@@ -27446,7 +27446,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 572543471}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.9496765
   m_Height: 2
   m_Direction: 1
@@ -47624,7 +47624,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -68414,7 +68414,7 @@ BoxCollider:
   m_GameObject: {fileID: 1538993003}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.0581336, y: 0.15924859, z: 1.2137536}
   m_Center: {x: -0.007867575, y: 1.3578435, z: 0}
@@ -79460,7 +79460,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 9ed9c812d3351cd4eb9af38e19325ca0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 9ed9c812d3351cd4eb9af38e19325ca0, type: 3}
       propertyPath: m_LightmapParameters
